@@ -16,7 +16,7 @@
 	dm = "!f() { deletemerged; }; f"
 	pushu = "!f() { pushu; }; f"
 	camend = commit --amend --no-edit
-	commitbr = "!f() { commitbr; }; f"
+	cibr = "!f() { commitbr; }; f"
 [core]
 	excludesfile = /Users/francesco.ferraioli/.gitignore
 [help]
