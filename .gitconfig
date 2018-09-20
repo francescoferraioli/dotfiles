@@ -1,0 +1,23 @@
+[user]
+	name = Francesco Ferraioli
+	email = francesco.ferraioli@stacktracehq.com
+[pager]
+	branch = false
+[alias]
+	ci = commit
+	st = status
+	co = checkout
+	di = diff --color-words
+	br = branch
+	cob = checkout -b
+	ls = log --oneline --graph
+	pm = "!f() { prunemerged; }; f"
+	sm = "!f() { showmerged; }; f"
+	dm = "!f() { deletemerged; }; f"
+	pushu = "!f() { pushu; }; f"
+	camend = commit --amend --no-edit
+	commitbr = "!f() { commitbr; }; f"
+[core]
+	excludesfile = /Users/francesco.ferraioli/.gitignore
+[help]
+	autocorrect = 1
