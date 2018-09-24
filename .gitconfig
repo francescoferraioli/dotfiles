@@ -2,7 +2,7 @@
 	name = Francesco Ferraioli
 	email = francesco.ferraioli@outlook.com
 [color]
-  ui = true
+	ui = true
 [pager]
 	branch = false
 [alias]
@@ -43,9 +43,22 @@
 	cbr = "!f() { commitbr; }; f"
 [core]
 	excludesfile = ~/.gitignore
+	pager = diff-so-fancy | less --tabs=4 -RFX
 [help]
 	autocorrect = 1
 [push]
   default = current
 [fetch]
   prune = true
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta = yellow
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
