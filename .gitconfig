@@ -36,7 +36,10 @@
 	l15 = !git l -n 15
 	l20 = !git l -n 20
 	l25 = !git l -n 25
-	wip = commit --all --message 'WIP'
+	wip = commit -m 'WIP'
+	p = pull
+	ps = push
+	r = rebase
 	pm = "!f() { prunemerged; }; f"
 	sm = "!f() { showmerged; }; f"
 	dm = "!f() { deletemerged; }; f"
