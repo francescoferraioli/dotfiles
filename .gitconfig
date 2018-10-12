@@ -43,7 +43,7 @@
 	pm = "!f() { prunemerged; }; f"
 	sm = "!f() { showmerged; }; f"
 	dm = "!f() { deletemerged; }; f"
-	pushu = "!f() { pushu; }; f"
+	psu = "!f() { pushu; }; f"
 	cbr = "!f() { commitbr; }; f"
 [core]
 	excludesfile = ~/.gitignore
