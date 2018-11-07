@@ -20,6 +20,8 @@
 	d = diff
 	ds = diff --staged
 	discard = checkout --
+	fixup = commit --fixup
+	ls = diff-tree --no-commit-id --name-only -r
 	rs = reset --soft
   	rh = reset --hard
 	uncommit = reset --soft HEAD^
