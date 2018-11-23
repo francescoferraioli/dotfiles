@@ -38,6 +38,7 @@
 	l15 = !git l -n 15
 	l20 = !git l -n 20
 	l25 = !git l -n 25
+	ll = !git l -n 10
 	wip = commit -m 'WIP'
 	p = pull
 	ps = push
