@@ -51,6 +51,7 @@
 	dm = "!f() { deletemerged; }; f"
 	psu = "!f() { pushu; }; f"
 	cbr = "!f() { commitbr; }; f"
+	cobt = "!f () { checkoutbranchtitle \"$1\"; }; f"
 	showtool = "!f () { rev=${1:-HEAD}; git difftool --no-prompt $rev~1 $rev; }; f $1"
 [core]
 	excludesfile = ~/.gitignore
