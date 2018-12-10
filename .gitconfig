@@ -43,11 +43,15 @@
 	p = pull
 	ps = push
 	r = rebase
+	showv = !git showtool
+	dv = difftool --no-prompt
+	dsv = difftool --no-prompt --staged
 	pm = "!f() { prunemerged; }; f"
 	sm = "!f() { showmerged; }; f"
 	dm = "!f() { deletemerged; }; f"
 	psu = "!f() { pushu; }; f"
 	cbr = "!f() { commitbr; }; f"
+	showtool = "!f () { rev=${1:-HEAD}; git difftool --no-prompt $rev~1 $rev; }; f $1"
 [core]
 	excludesfile = ~/.gitignore
 	pager = diff-so-fancy | less --tabs=4 -RFX
