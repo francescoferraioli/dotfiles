@@ -69,3 +69,7 @@
 	whitespace = red reverse
 [rebase]
 	autosquash = true
+[diff]
+	tool = diffmerge
+[difftool "diffmerge"]
+	cmd = /usr/local/bin/diffmerge \"$LOCAL\" \"$REMOTE\"
