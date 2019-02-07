@@ -7,7 +7,7 @@
 	branch = false
 [alias]
 	a = add
-  	aa = add --all
+	aa = add --all
 	amend = commit --amend --no-edit
 	c = commit
 	cm = commit --message
@@ -16,16 +16,16 @@
 	b = branch
 	co = checkout
 	cob = checkout -b
-  	cp = cherry-pick
+	cp = cherry-pick
 	d = diff
 	ds = diff --staged
 	discard = checkout --
 	fixup = commit --fixup
 	ls = diff-tree --no-commit-id --name-only -r
 	rs = reset --soft
-  	rh = reset --hard
+	rh = reset --hard
 	uncommit = reset --soft HEAD^
-  	unstage = reset HEAD
+	unstage = reset HEAD
 	wipe = reset --hard HEAD
 	patch = add --patch
 	l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset' --abbrev-commit
@@ -59,7 +59,7 @@
 [help]
 	autocorrect = 1
 [push]
-  default = current
+	default = current
 [color "diff-highlight"]
 	oldNormal = red bold
 	oldHighlight = red bold 52
