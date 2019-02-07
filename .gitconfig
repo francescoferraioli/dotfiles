@@ -43,6 +43,7 @@
 	p = pull
 	ps = push
 	psfl = push --force-with-lease
+	fmar = !git fetch && git rebase origin/master
 	r = rebase
 	showv = !git showtool
 	dv = difftool --no-prompt
