@@ -42,6 +42,7 @@
 	wip = commit -m 'WIP'
 	p = pull
 	ps = push
+	psfl = push --force-with-lease
 	r = rebase
 	showv = !git showtool
 	dv = difftool --no-prompt
