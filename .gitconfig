@@ -48,6 +48,7 @@
 	showv = !git showtool
 	dv = difftool --no-prompt
 	dsv = difftool --no-prompt --staged
+	tagcommit = rev-list -n 1
 	pm = "!f() { prunemerged; }; f"
 	sm = "!f() { showmerged; }; f"
 	dm = "!f() { deletemerged; }; f"
