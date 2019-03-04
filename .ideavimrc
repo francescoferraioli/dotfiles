@@ -1,0 +1,4 @@
+set surround
+set clipboard+=unnamed
+set rnu
+set nu
