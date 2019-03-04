@@ -1,0 +1,57 @@
+{
+  "vim.statusBarColorControl": true,
+  "vim.statusBarColors.normal": "#161616",
+  "vim.statusBarColors.replace": "#5f0000",
+  "vim.statusBarColors.insert": "#6b630b",
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["p"],
+      "after": ["p", "g", "v", "y"]
+    }
+  ],
+  "vim.normalModeKeyBindings": [
+    // Go replace inner word
+    { "before": [ "g", "r", "i", "w" ], "after": [ "v", "i", "w", "p" ] },
+
+    // Go replace inner "
+    { "before": [ "g", "r", "i", "\"" ], "after": [ "v", "i", "\"", "p" ] },
+
+    // Go replace inner '
+    { "before": [ "g", "r", "i", "'" ], "after": [ "v", "i", "'", "p" ] },
+
+    // Go replace inner ()
+    { "before": [ "g", "r", "i", "(" ], "after": [ "v", "i", "(", "p" ] },
+    { "before": [ "g", "r", "i", ")" ], "after": [ "v", "i", ")", "p" ] },
+
+    // Go replace inner []
+    { "before": [ "g", "r", "i", "[" ], "after": [ "v", "i", "[", "p" ] },
+    { "before": [ "g", "r", "i", "]" ], "after": [ "v", "i", "]", "p" ] },
+
+    // Go replace inner {}
+    { "before": [ "g", "r", "i", "{" ], "after": [ "v", "i", "{", "p" ] },
+    { "before": [ "g", "r", "i", "}" ], "after": [ "v", "i", "}", "p" ] },
+
+    // Yank to end of line
+    {
+      "before": [ "Y" ],
+      "after": [ "y", "$" ]
+    },
+    {
+      "before": [" "],
+      "after": ["leader", "leader", "leader", "b", "d", "w"]
+    },
+    {
+      "before": [ "<C-n>" ],
+      "commands": [ ":nohl" ]
+    },
+  ],
+  "vim.useSystemClipboard": true,
+  "vim.leader": "`",
+  "vim.hlsearch": true,
+  "vim.easymotionMarkerFontFamily": "Menlo",
+  "vim.easymotion": false,
+  "vim.easymotionMarkerYOffset": 0,
+  "vim.easymotionMarkerHeight": 16,
+  "vim.easymotionMarkerFontSize": "16",
+  "editor.lineNumbers": "relative"
+}
