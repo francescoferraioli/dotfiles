@@ -49,6 +49,7 @@
 	dv = difftool --no-prompt
 	dsv = difftool --no-prompt --staged
 	tagcommit = rev-list -n 1
+	tagupdate = "!f () { git tag -d $1 && git push origin :refs/tags/$1 && git tag $1 && git push origin $1; }; f" 
 	pm = "!f() { prunemerged; }; f"
 	sm = "!f() { showmerged; }; f"
 	dm = "!f() { deletemerged; }; f"
