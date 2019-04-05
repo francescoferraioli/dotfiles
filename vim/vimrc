@@ -4,3 +4,24 @@ set number
 set relativenumber
 
 set clipboard=unnamed
+
+set encoding=utf-8 nobomb
+
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+
+	Plug 'tpope/vim-surround'
+	Plug 'sheerun/vim-polyglot' " Language packs
+	Plug 'chriskempson/base16-vim'
+
+call plug#end()
+
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
