@@ -1,1 +1,0 @@
-ls -dl .?* | grep -v ^d | awk ' {print $9} ' | xargs -n 1 -t -I % cp % ~/%
