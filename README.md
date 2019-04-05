@@ -36,3 +36,15 @@ brew install jq
 ```
 npm install -g diff-so-fancy
 ```
+- https://github.com/jwilm/alacritty
+```
+brew cask install alacritty
+```
+- https://github.com/tmux/tmux
+```
+brew install tmux
+```
+- https://github.com/jamesottaway/tmux-up
+```
+curl -L https://git.io/tmux-up -o /usr/local/bin/tmux-up
+```
