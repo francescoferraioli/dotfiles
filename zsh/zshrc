@@ -183,3 +183,26 @@ load-nvmrc() {
 }
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
+
+########################
+# HELPER FUNCTION
+########################
+
+# Create a fixup commit from fzf search of your branches commits
+gfixup() {
+  local out sha
+  git diff --cached --quiet --exit-code
+  if [ $? -ne 1 ]; then
+    echo "No files are staged for a fixup"
+    return
+  fi
+  out=$(
+    git log origin/master.. --graph --color=always \
+        --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
+    fzf --ansi --no-sort --reverse --query="$q" --tiebreak=index \
+        --preview "echo 'Currently staged...\n' && git diff --cached --color" --toggle-sort=\`)
+  sha=$(sed 's/^[^a-z0-9]*//;/^$/d' <<< "$out" | awk '{print $1}')
+  if [ ! -z "$sha" ]; then
+    git commit --fixup "$sha"
+  fi
+}
