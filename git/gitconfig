@@ -39,12 +39,16 @@
 	l20 = !git l -n 20
 	l25 = !git l -n 25
 	ll = !git l -n 10
+	lb = !git l origin/master.. 
 	wip = commit -m 'WIP'
 	p = pull
 	ps = push
 	psfl = push --force-with-lease
 	fmar = !git fetch && git rebase origin/master
 	r = rebase
+	rb = rebase -i origin/master
+	rc = rebase --continue
+	ra = rebase --abort
 	showv = !git showtool
 	dv = difftool --no-prompt
 	dsv = difftool --no-prompt --staged
