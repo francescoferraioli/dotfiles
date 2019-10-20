@@ -22,9 +22,9 @@ git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/theme
 git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 
 # NIX
-curl https://nixos.org/nix/install | sh
-nix-channel --remove nixpkgs
-nix-channel --add https://nixos.org/channels/nixos-18.03 nixpkgs
-nix-channel --update
+# curl https://nixos.org/nix/install | sh
+# nix-channel --remove nixpkgs
+# nix-channel --add https://nixos.org/channels/nixos-18.03 nixpkgs
+# nix-channel --update
 
 ./create-links.sh
