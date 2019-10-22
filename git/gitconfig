@@ -27,7 +27,7 @@
 	rh = reset --hard
 	uncommit = reset --soft HEAD^
 	unstage = reset HEAD
-	wipe = reset --hard HEAD
+	yeet = reset --hard HEAD
 	patch = add --patch
 	l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset' --abbrev-commit
 	l1 = !git l -n 1
