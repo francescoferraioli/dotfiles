@@ -167,6 +167,7 @@ base16_chalk
 
 alias c="code"
 alias v="vim"
+alias y="yarn"
 
 ########################
 # NVM
