@@ -54,8 +54,12 @@
 	dv = difftool --no-prompt
 	dsv = difftool --no-prompt --staged
 	tagcommit = rev-list -n 1
-	tagupdate = "!f () { git tag -d $1 && git push origin :refs/tags/$1 && git tag $1 && git push origin $1; }; f" 
-	tuc = "!f () { git tagupdate $(git log -1 --pretty=%B); }; f" 
+	tagadd = "!f () { git tag $1 && git push origin $1; }; f"
+	tagdelete = "!f () { git tag -d $1 && git push origin :refs/tags/$1; }; f"
+	tagupdate = "!f () { git tagdelete $1 && git tagadd $1; }; f"
+	tac = "!f () { git tagadd $(git log -1 --pretty=%B); }; f"
+	tdc = "!f () { git tagdelete $(git log -1 --pretty=%B); }; f"
+	tuc = "!f () { git tagupdate $(git log -1 --pretty=%B); }; f"
 	pm = remote prune origin
 	sm = "!f() { git branch --merged master | grep -v '^[ *]*master$'; }; f"
 	dm = "!f() { git sm | xargs git branch -d; }; f"
