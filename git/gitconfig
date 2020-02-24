@@ -60,6 +60,7 @@
 	tac = "!f () { git tagadd $(git log -1 --pretty=%B); }; f"
 	tdc = "!f () { git tagdelete $(git log -1 --pretty=%B); }; f"
 	tuc = "!f () { git tagupdate $(git log -1 --pretty=%B); }; f"
+	pa = "!f () { git fetch -p && for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`; do git branch -D $branch; done; }; f"
 	pm = remote prune origin
 	sm = "!f() { git branch --merged master | grep -v '^[ *]*master$'; }; f"
 	dm = "!f() { git sm | xargs git branch -d; }; f"
