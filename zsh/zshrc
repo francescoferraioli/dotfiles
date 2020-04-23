@@ -144,8 +144,17 @@ bindkey "^[[3;5~" delete-char
 ########################
 # Register fzf autocompletions and key-bindings
 ########################
-[ -f ~/.fzf.zsh  ] && source ~/.fzf.zsh
 
+# Auto-completion
+# ---------------
+[[ $- == *i* ]] && source ~/.nix-profile/share/fzf/completion.zsh 2> /dev/null
+
+# Key bindings
+# ------------
+source ~/.nix-profile/share/fzf/key-bindings.zsh
+
+# Options
+# ------------
 export FZF_DEFAULT_OPTS=''
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 --color=light
