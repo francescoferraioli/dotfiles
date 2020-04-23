@@ -4,7 +4,7 @@ source ~/.nix-profile/etc/profile.d/nix.sh
 export PATH=$HOME/scripts:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH=~/.nix-profile/share/oh-my-zsh
 export MYVIMRC="~/.vimrc"
 export TERM="xterm-256color"
 export ASPNETCORE_ENVIRONMENT=Development
@@ -14,7 +14,8 @@ export ASPNETCORE_ENVIRONMENT=Development
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="powerlevel9k/powerlevel9k"
+# ZSH_THEME="powerlevel9k/powerlevel9k"
+source ~/.nix-profile/share/zsh-powerlevel9k/powerlevel9k.zsh-theme
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -119,7 +120,7 @@ POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%{%B%F{black}%K{yellow}%} $user_symbo
 
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.nix-profile/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ########################
 # Zsh VIM Style editing
