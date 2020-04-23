@@ -167,6 +167,7 @@ base16_chalk
 # ALIAS
 ########################
 
+alias g="git"
 alias c="code"
 alias v="vim"
 alias y="yarn"
