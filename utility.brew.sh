@@ -17,5 +17,6 @@ brew install tmux
 
 # ZSH
 brew install zsh
+brew install oh-my-zsh
 brew install zsh-completions
 brew install zsh-syntax-highlighting
