@@ -1,44 +1,32 @@
 #!/bin/bash
 
+create_link() {
+    rm $1
+    ln -s $2 $1
+    ls -al $1
+}
+
 echo ""
 echo "Setting up gitconfig links"
-gitconfig=~/.gitconfig
-rm "$gitconfig"
-ln -s ~/dotfiles/git/gitconfig "$gitconfig"
-ls -al "$gitconfig"
+create_link ~/.gitconfig ~/dotfiles/git/gitconfig
 
 echo ""
 echo "Setting up gitignore links"
-gitignore=~/.gitignore
-rm "$gitignore"
-ln -s ~/dotfiles/git/gitignore "$gitignore"
-ls -al "$gitignore"
+create_link ~/.gitignore ~/dotfiles/git/gitignore
 
 echo ""
 echo "Setting up zsh links"
-zsh=~/.zshrc
-rm "$zsh"
-ln -s ~/dotfiles/zsh/zshrc "$zsh"
-ls -al "$zsh"
+create_link ~/.zshrc ~/dotfiles/zsh/zshrc
 
 echo ""
 echo "Setting up alacritty links"
 rm -rf ~/.config/alacritty
-alacritty=~/.alacritty.yml
-rm "$alacritty"
-ln -s ~/dotfiles/alacritty/alacritty.yml "$alacritty"
-ls -al "$alacritty"
+create_link ~/.alacritty.yml ~/dotfiles/alacritty/alacritty.yml
 
 echo ""
 echo "Setting up vim links"
-vim=~/.vimrc
-rm "$vim"
-ln -s ~/dotfiles/vim/vimrc "$vim"
-ls -al "$vim"
+create_link ~/.vimrc ~/dotfiles/vim/vimrc
 
 echo ""
 echo "Setting up tmux links"
-tmux=~/.tmux.conf
-rm "$tmux"
-ln -s ~/dotfiles/tmux/tmux.conf "$tmux"
-ls -al "$tmux"
+create_link ~/.tmux.conf ~/dotfiles/tmux/tmux.conf
