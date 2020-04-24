@@ -7,12 +7,6 @@
 # /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 ###############
-# APPLE SETTINGS
-###############
-defaults write com.apple.finder AppleShowAllFiles YES
-defaults write -g ApplePressAndHoldEnabled -bool false
-
-###############
 # SCRIPTS
 ###############
 git clone https://github.com/francescoferraioli/scripts.git ~/scripts
@@ -38,3 +32,9 @@ git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shel
 # DOTFILES SYMLINKS
 ###############
 ./create-links.sh
+
+###############
+# APPLE SETTINGS
+###############
+defaults write com.apple.finder AppleShowAllFiles YES
+defaults write -g ApplePressAndHoldEnabled -bool false
