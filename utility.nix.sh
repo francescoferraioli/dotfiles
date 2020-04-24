@@ -20,3 +20,4 @@ nix-env -i zsh
 nix-env -i oh-my-zsh
 nix-env -i zsh-completions
 nix-env -i zsh-syntax-highlighting
+nix-env -i powerlevel9k
