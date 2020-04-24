@@ -1,4 +1,6 @@
 # INSTALLERS
+# nix
+# curl -L https://nixos.org/nix/install | sh
 # brew
 # /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
