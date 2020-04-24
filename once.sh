@@ -3,12 +3,6 @@
 defaults write com.apple.finder AppleShowAllFiles YES
 defaults write -g ApplePressAndHoldEnabled -bool false
 
-# BREW
-brew update
-brew upgrade
-brew doctor
-brew bundle
-
 # SCRIPTS
 git clone https://github.com/francescoferraioli/scripts.git ~/scripts
 
