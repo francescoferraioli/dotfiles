@@ -1,5 +1,6 @@
 # GIT
 nix-env -i git
+nix-env -i git-open
 nix-env -i diff-so-fancy
 
 # UTILITY
