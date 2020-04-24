@@ -44,3 +44,8 @@ git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shel
 ###############
 defaults write com.apple.finder AppleShowAllFiles YES
 defaults write -g ApplePressAndHoldEnabled -bool false
+
+###############
+# APP INSTALL
+###############
+./cask.brew.sh
