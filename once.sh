@@ -9,6 +9,9 @@ brew upgrade
 brew doctor
 brew bundle
 
+# SCRIPTS
+git clone https://github.com/francescoferraioli/scripts.git ~/scripts
+
 # TMUX UP
 curl -L https://git.io/tmux-up -o /usr/local/bin/tmux-up
 chmod u+x /usr/local/bin/tmux-up
