@@ -6,6 +6,12 @@ create_link() {
     ls -al $1
 }
 
+create_dir_link() {
+    rm -rf $1
+    ln -s $2 $1
+    ls -al $1
+}
+
 echo ""
 echo "Setting up gitconfig links"
 create_link ~/.gitconfig ~/dotfiles/git/gitconfig
@@ -30,3 +36,8 @@ create_link ~/.vimrc ~/dotfiles/vim/vimrc
 echo ""
 echo "Setting up tmux links"
 create_link ~/.tmux.conf ~/dotfiles/tmux/tmux.conf
+
+echo ""
+echo "Setting up hammerspoon links"
+create_link ~/.hammerspoon/init.lua ~/dotfiles/hammerspoon/init.lua
+create_dir_link ~/.hammerspoon/keyboard ~/dotfiles/hammerspoon/keyboard
