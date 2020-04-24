@@ -7,6 +7,12 @@
 # /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 ###############
+# CLI INSTALL
+###############
+./cli.nix.sh
+./cli.brew.sh
+
+###############
 # SCRIPTS
 ###############
 git clone https://github.com/francescoferraioli/scripts.git ~/scripts
