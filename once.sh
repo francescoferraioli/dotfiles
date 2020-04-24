@@ -4,6 +4,7 @@
 # brew
 # /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+# APPLE SETTINGS
 defaults write com.apple.finder AppleShowAllFiles YES
 defaults write -g ApplePressAndHoldEnabled -bool false
 
