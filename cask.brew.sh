@@ -2,6 +2,7 @@
 brew cask install alacritty
 brew cask install alfred
 brew cask install visual-studio-code
+brew cask install docker
 brew cask install fork
 brew cask install postman
 brew cask install firefox
