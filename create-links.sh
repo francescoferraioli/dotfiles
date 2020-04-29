@@ -32,6 +32,7 @@ create_link ~/.alacritty.yml ~/dotfiles/alacritty/alacritty.yml
 echo ""
 echo "Setting up vim links"
 create_link ~/.vimrc ~/dotfiles/vim/vimrc
+create_link ~/.ideavimrc ~/dotfiles/vim/ideavimrc
 
 echo ""
 echo "Setting up tmux links"
