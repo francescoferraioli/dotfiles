@@ -39,6 +39,10 @@ echo "Setting up tmux links"
 create_link ~/.tmux.conf ~/dotfiles/tmux/tmux.conf
 
 echo ""
+echo "Setting up starship links"
+create_link ~/.config/starship.toml ~/dotfiles/starship/starship.toml
+
+echo ""
 echo "Setting up hammerspoon links"
 create_link ~/.hammerspoon/init.lua ~/dotfiles/hammerspoon/init.lua
 create_dir_link ~/.hammerspoon/keyboard ~/dotfiles/hammerspoon/keyboard

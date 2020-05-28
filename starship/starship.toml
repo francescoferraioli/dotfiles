@@ -1,0 +1,34 @@
+prompt_order = [
+    "username",
+    "directory",
+    "git_branch",
+    "git_state",
+    "git_status",
+    "line_break",
+    "character",
+]
+
+[directory]
+truncate_to_repo = false
+truncation_length = 0
+
+[git_status]
+prefix = "["
+suffix = " | ]"
+conflicted = " | ="
+ahead = " | ⇡ "
+behind = " | ⇣ "
+diverged = " | ⇕"
+untracked = " | ?"
+stashed = " | $ "
+modified = " | !"
+staged = " | +"
+renamed = " | »"
+deleted = " | ✘"
+show_sync_count = true
+stashed_count.enabled = true
+
+[character]
+symbol = "λ"
+vicmd_symbol = "❯"
+use_symbol_for_status = true
