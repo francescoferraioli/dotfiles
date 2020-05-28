@@ -5,6 +5,12 @@
 source ~/.nix-profile/etc/profile.d/nix.sh
 
 ########################
+# STARSHIP
+########################
+
+eval "$(starship init zsh)"
+
+########################
 # RANDOM ENV VARS
 ########################
 
