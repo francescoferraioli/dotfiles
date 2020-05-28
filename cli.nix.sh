@@ -16,7 +16,7 @@ nix-env -i nodejs
 # TMUX
 nix-env -i tmux
 
-# ZSH
+# TERMINAL
 nix-env -i zsh
 nix-env -i oh-my-zsh
 nix-env -i zsh-completions
