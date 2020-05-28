@@ -74,16 +74,6 @@ bindkey -M vicmd "^[[3~" delete-char
 bindkey "^[[3~"  delete-char
 bindkey "^[[3;5~" delete-char
 
-# Hack to get vi_mode to start working
-# https://github.com/Powerlevel9k/powerlevel9k/issues/319#issuecomment-355870476
-
-zle-keymap-select () {
-	zle reset-prompt
-	zle -R
-}
-
-zle -N zle-keymap-select
-
 ########################
 # Register fzf autocompletions and key-bindings
 ########################
