@@ -43,7 +43,10 @@ plugins=()
 
 source $ZSH/oh-my-zsh.sh
 
-# syntax highlighting
+########################
+# SYNTAX HIGHLIGHTING
+########################
+
 source ~/.nix-profile/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ########################
