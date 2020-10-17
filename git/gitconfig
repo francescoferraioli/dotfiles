@@ -40,14 +40,14 @@
 	l20 = !git l -n 20
 	l25 = !git l -n 25
 	ll = !git l -n 10
-	lb = !git l origin/master.. 
+	lb = !git l origin/$(git mbr).. 
 	wip = commit -m 'WIP'
 	p = pull
 	ps = push
 	psfl = push --force-with-lease
-	fmar = !git fetch && git rebase origin/master
+	fmar = !git fetch && git rebase origin/$(git mbr)
 	r = rebase
-	rb = rebase -i origin/master
+	rb = !git rebase -i origin/$(git mbr)
 	rc = rebase --continue
 	ra = rebase --abort
 	showv = !git showtool
@@ -62,7 +62,7 @@
 	tuc = "!f () { git tagupdate $(git log -1 --pretty=%B); }; f"
 	pa = "!f () { git fetch -p && for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`; do git branch -D $branch; done; }; f"
 	pm = remote prune origin
-	sm = "!f() { git branch --merged master | grep -v '^[ *]*master$'; }; f"
+	sm = "!f() { git branch --merged $(git mbr) | grep -v '^[ *]*$(git mbr)$'; }; f"
 	dm = "!f() { git sm | xargs git branch -d; }; f"
 	psu = "!f() { git branch | grep \\* | cut -d ' ' -f2 | xargs -n 1 git push -u origin; }; f"
 	cbr = "!f() { git branch | grep \\* | cut -d ' ' -f2 | sed 's/-/ /g' | awk '{$1=toupper(substr($1,0,1))substr($1,2)}1' | xargs -I % sh -c 'git commit -m \"%\"'; }; f"
@@ -73,6 +73,7 @@
 	slc = "!f () { git s | awk '{print $2}' | xargs -I % -n 1 git slCommitOne %; }; f"
 	slCommitOne = "!f () { fileName=${1}; git log -n 1 $fileName | head -n 1 | cut -d ' ' -f2 | xargs -I {} git slAddAndFixup $fileName {}; }; f $1"
 	slAddAndFixup = "!f () { fileName=${1}; sha=${2}; git a $fileName && git fixup $sha; }; f $1 $2"
+	mbr = "!f () { git branch --remote | awk '{print $1}' | rg '^origin/(master|main)$' | head -n 1 | sed 's/origin\\///'; }; f"
 [core]
 	excludesfile = ~/.gitignore
 	pager = diff-so-fancy | less --tabs=4 -RFX
