@@ -44,11 +44,13 @@ create_link ~/.config/starship.toml ~/dotfiles/starship/starship.toml
 
 echo ""
 echo "Setting up hammerspoon links"
+mkdir ~/.hammerspoon
 create_link ~/.hammerspoon/init.lua ~/dotfiles/hammerspoon/init.lua
 create_dir_link ~/.hammerspoon/keyboard ~/dotfiles/hammerspoon/keyboard
 
 echo ""
 echo "Setting up launch-agents links"
+mkdir ~/Library/LaunchAgents
 for filename in ~/dotfiles/launch-agents/*.plist; do
     LAUNCH_AGENT_NAME=$(basename $filename)
     create_link ~/Library/LaunchAgents/$LAUNCH_AGENT_NAME ~/dotfiles/launch-agents/$LAUNCH_AGENT_NAME
