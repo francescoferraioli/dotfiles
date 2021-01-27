@@ -53,7 +53,7 @@ source $ZSH/oh-my-zsh.sh
 # SYNTAX HIGHLIGHTING
 ########################
 
-source ~/.nix-profile/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ########################
 # Zsh VIM Style editing
@@ -78,13 +78,19 @@ bindkey "^[[3;5~" delete-char
 # Register fzf autocompletions and key-bindings
 ########################
 
+# Setup fzf		
+# ---------		
+if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then		
+  export PATH="$PATH:/usr/local/opt/fzf/bin"		
+fi		
+
 # Auto-completion
 # ---------------
-[[ $- == *i* ]] && source ~/.nix-profile/share/fzf/completion.zsh 2> /dev/null
+[[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2> /dev/null		
 
 # Key bindings
 # ------------
-source ~/.nix-profile/share/fzf/key-bindings.zsh
+source "/usr/local/opt/fzf/shell/key-bindings.zsh"
 
 # Options
 # ------------
