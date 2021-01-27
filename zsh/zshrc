@@ -144,3 +144,9 @@ load-nvmrc
 
 # export DIRENV_LOG_FORMAT=
 # eval "$(direnv hook zsh)"
+
+########################
+# FTR
+########################
+
+export PATH=/Users/francescoferraioli/code/ftr-dev-scripts/commands:$PATH
