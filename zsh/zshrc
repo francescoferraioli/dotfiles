@@ -150,3 +150,10 @@ load-nvmrc
 ########################
 
 export PATH=/Users/francescoferraioli/code/ftr-dev-scripts/commands:$PATH
+
+export FTR_ROOT_CERT_PATH=~/local/certificate.pem
+export FTR_ROOT_KEY_PATH=~/local/key.pem
+
+~/.zshrc_private.sh
+
+export PATH=/Users/francescoferraioli/.scripts:$PATH
