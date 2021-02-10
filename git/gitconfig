@@ -18,6 +18,7 @@
 	cb = "!f() { git branch | grep \\* | cut -d ' ' -f2; }; f"
 	co = checkout
 	cob = checkout -b
+	com = !git checkout $(git mbr)
 	cp = cherry-pick
 	d = diff
 	ds = diff --staged
