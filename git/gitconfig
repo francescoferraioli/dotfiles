@@ -27,6 +27,7 @@
 	fixup = commit --fixup
 	ls = diff-tree --no-commit-id --name-only -r
 	rh = reset --hard
+	rho = !git rh origin/$(git cb)
 	uncommit = reset --soft HEAD^
 	unstage = reset HEAD
 	yeet = reset --hard HEAD
