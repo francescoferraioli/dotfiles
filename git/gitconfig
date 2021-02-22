@@ -53,6 +53,7 @@
 	rb = !git rebase -i origin/$(git mbr)
 	rc = rebase --continue
 	ra = rebase --abort
+	rs = rebase --skip
 	showv = !git showtool
 	dv = difftool --no-prompt
 	dsv = difftool --no-prompt --staged
