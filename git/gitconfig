@@ -22,7 +22,7 @@
 	cp = cherry-pick
 	d = diff
 	ds = diff --staged
-	dr = !git diff origin/$(git cb)
+	do = !git diff origin/$(git cb)
 	db = !git diff origin/$(git mbr)..
 	discard = checkout --
 	fixup = commit --fixup
