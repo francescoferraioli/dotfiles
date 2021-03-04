@@ -6,34 +6,55 @@
 [pager]
 	branch = false
 [alias]
+	# Adding	
 	a = add
 	aa = add --all
 	anw = "!f () { fileName=${1}; git diff -U0 -w --no-color -- $fileName | git apply --cached --ignore-whitespace --unidiff-zero -; }; f $1"
+	discard = checkout --
+	patch = add --patch
+	unstage = reset HEAD
+
+	# Committing
 	amend = commit --amend --no-edit
 	c = commit
 	cm = commit --message
+	cp = cherry-pick
+	fixup = commit --fixup
+	yeet = reset --hard HEAD
+	uncommit = reset --soft HEAD^
+	rh = reset --hard
+	rho = !git rh origin/$(git cb)
+	wip = commit -m 'WIP'
+	cbr = "!f() { git cb | sed 's/-/ /g' | awk '{$1=toupper(substr($1,0,1))substr($1,2)}1' | xargs -I % sh -c 'git commit -m \"%\"'; }; f"
+	slc = "!f () { git s | awk '{print $2}' | xargs -I % -n 1 git slCommitOne %; }; f"
+
+	# Status
 	s = status --short
 	st = status
+
+	# Branch
 	b = branch
 	cb = "!f() { git branch | grep \\* | cut -d ' ' -f2; }; f"
 	mb = "!f () { git branch --remote | awk '{print $1}' | rg '^origin/(develop|master|main)$' | head -n 1 | sed 's/origin\\///'; }; f"
 	co = checkout
 	cob = checkout -b
 	com = !git checkout $(git mb)
-	cp = cherry-pick
+	sm = "!f() { git branch --merged $(git mb) | grep -v '^[ *]*$(git mb)$'; }; f"
+	dm = "!f() { git sm | xargs git branch -d; }; f"
+	cobt = "!f () { echo $\"$1\" | sed 's/ /-/g' | awk '{$1=tolower($1)}1' | xargs -n 1 git checkout -b; }; f"
+
+	# Diff
 	d = diff
 	ds = diff --staged
 	do = !git diff origin/$(git cb)
 	db = !git diff origin/$(git mb)..
-	discard = checkout --
-	fixup = commit --fixup
 	ls = diff-tree --no-commit-id --name-only -r
-	rh = reset --hard
-	rho = !git rh origin/$(git cb)
-	uncommit = reset --soft HEAD^
-	unstage = reset HEAD
-	yeet = reset --hard HEAD
-	patch = add --patch
+	showtool = "!f () { rev=${1:-HEAD}; git difftool --no-prompt $rev~1 $rev; }; f $1"
+	showv = !git showtool
+	dv = difftool --no-prompt
+	dsv = difftool --no-prompt --staged
+
+	# Log
 	l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset' --abbrev-commit
 	l1 = !git l -n 1
 	l2 = !git l -n 2
@@ -46,19 +67,25 @@
 	l25 = !git l -n 25
 	ll = !git l -n 10
 	lb = !git l origin/$(git mb).. 
-	wip = commit -m 'WIP'
+	sl = "!f () { count=${1:-3}; git s | awk '{print $2}'  | xargs -I % -n 1 git slOne % $count; }; f $1"
+
+	# Remote
 	p = pull
 	ps = push
 	psfl = push --force-with-lease
+	psu = "!f() { git cb | xargs -n 1 git push -u origin; }; f"
 	fmar = !git fetch && git rebase origin/$(git mb)
+	pa = "!f () { git fetch -p && for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`; do git branch -D $branch; done; }; f"
+	pm = remote prune origin
+
+	# Rebase
 	r = rebase
 	rb = !git rebase -i origin/$(git mb)
 	rc = rebase --continue
 	ra = rebase --abort
 	rs = rebase --skip
-	showv = !git showtool
-	dv = difftool --no-prompt
-	dsv = difftool --no-prompt --staged
+
+	# Tagging
 	tagcommit = rev-list -n 1
 	tagadd = "!f () { git tag $1; git push origin $1; }; f"
 	tagdelete = "!f () { git tag -d $1; git push origin :refs/tags/$1; }; f"
@@ -66,17 +93,9 @@
 	tac = "!f () { git tagadd $(git log -1 --pretty=%B); }; f"
 	tdc = "!f () { git tagdelete $(git log -1 --pretty=%B); }; f"
 	tuc = "!f () { git tagupdate $(git log -1 --pretty=%B); }; f"
-	pa = "!f () { git fetch -p && for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`; do git branch -D $branch; done; }; f"
-	pm = remote prune origin
-	sm = "!f() { git branch --merged $(git mb) | grep -v '^[ *]*$(git mb)$'; }; f"
-	dm = "!f() { git sm | xargs git branch -d; }; f"
-	psu = "!f() { git cb | xargs -n 1 git push -u origin; }; f"
-	cbr = "!f() { git cb | sed 's/-/ /g' | awk '{$1=toupper(substr($1,0,1))substr($1,2)}1' | xargs -I % sh -c 'git commit -m \"%\"'; }; f"
-	cobt = "!f () { echo $\"$1\" | sed 's/ /-/g' | awk '{$1=tolower($1)}1' | xargs -n 1 git checkout -b; }; f"
-	showtool = "!f () { rev=${1:-HEAD}; git difftool --no-prompt $rev~1 $rev; }; f $1"
-	sl = "!f () { count=${1:-3}; git s | awk '{print $2}'  | xargs -I % -n 1 git slOne % $count; }; f $1"
+
+	# Private
 	slOne = "!f () { fileName=${1}; count=${2:-3}; echo ===================== && echo $1 && echo ===================== && git l -n $count -- $fileName && echo --------------------- && echo; }; f $1 $2"
-	slc = "!f () { git s | awk '{print $2}' | xargs -I % -n 1 git slCommitOne %; }; f"
 	slCommitOne = "!f () { fileName=${1}; git log -n 1 $fileName | head -n 1 | cut -d ' ' -f2 | xargs -I {} git slAddAndFixup $fileName {}; }; f $1"
 	slAddAndFixup = "!f () { fileName=${1}; sha=${2}; git a $fileName && git fixup $sha; }; f $1 $2"
 [core]
