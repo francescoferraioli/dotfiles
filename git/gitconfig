@@ -18,12 +18,12 @@
 	cb = "!f() { git branch | grep \\* | cut -d ' ' -f2; }; f"
 	co = checkout
 	cob = checkout -b
-	com = !git checkout $(git mbr)
+	com = !git checkout $(git mb)
 	cp = cherry-pick
 	d = diff
 	ds = diff --staged
 	do = !git diff origin/$(git cb)
-	db = !git diff origin/$(git mbr)..
+	db = !git diff origin/$(git mb)..
 	discard = checkout --
 	fixup = commit --fixup
 	ls = diff-tree --no-commit-id --name-only -r
@@ -44,14 +44,14 @@
 	l20 = !git l -n 20
 	l25 = !git l -n 25
 	ll = !git l -n 10
-	lb = !git l origin/$(git mbr).. 
+	lb = !git l origin/$(git mb).. 
 	wip = commit -m 'WIP'
 	p = pull
 	ps = push
 	psfl = push --force-with-lease
-	fmar = !git fetch && git rebase origin/$(git mbr)
+	fmar = !git fetch && git rebase origin/$(git mb)
 	r = rebase
-	rb = !git rebase -i origin/$(git mbr)
+	rb = !git rebase -i origin/$(git mb)
 	rc = rebase --continue
 	ra = rebase --abort
 	rs = rebase --skip
@@ -67,7 +67,7 @@
 	tuc = "!f () { git tagupdate $(git log -1 --pretty=%B); }; f"
 	pa = "!f () { git fetch -p && for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`; do git branch -D $branch; done; }; f"
 	pm = remote prune origin
-	sm = "!f() { git branch --merged $(git mbr) | grep -v '^[ *]*$(git mbr)$'; }; f"
+	sm = "!f() { git branch --merged $(git mb) | grep -v '^[ *]*$(git mb)$'; }; f"
 	dm = "!f() { git sm | xargs git branch -d; }; f"
 	psu = "!f() { git cb | xargs -n 1 git push -u origin; }; f"
 	cbr = "!f() { git cb | sed 's/-/ /g' | awk '{$1=toupper(substr($1,0,1))substr($1,2)}1' | xargs -I % sh -c 'git commit -m \"%\"'; }; f"
@@ -78,7 +78,7 @@
 	slc = "!f () { git s | awk '{print $2}' | xargs -I % -n 1 git slCommitOne %; }; f"
 	slCommitOne = "!f () { fileName=${1}; git log -n 1 $fileName | head -n 1 | cut -d ' ' -f2 | xargs -I {} git slAddAndFixup $fileName {}; }; f $1"
 	slAddAndFixup = "!f () { fileName=${1}; sha=${2}; git a $fileName && git fixup $sha; }; f $1 $2"
-	mbr = "!f () { git branch --remote | awk '{print $1}' | rg '^origin/(develop|master|main)$' | head -n 1 | sed 's/origin\\///'; }; f"
+	mb = "!f () { git branch --remote | awk '{print $1}' | rg '^origin/(develop|master|main)$' | head -n 1 | sed 's/origin\\///'; }; f"
 [core]
 	excludesfile = ~/.gitignore
 	pager = diff-so-fancy | less --tabs=4 -RFX
