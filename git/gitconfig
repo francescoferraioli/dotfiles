@@ -16,6 +16,7 @@
 	st = status
 	b = branch
 	cb = "!f() { git branch | grep \\* | cut -d ' ' -f2; }; f"
+	mb = "!f () { git branch --remote | awk '{print $1}' | rg '^origin/(develop|master|main)$' | head -n 1 | sed 's/origin\\///'; }; f"
 	co = checkout
 	cob = checkout -b
 	com = !git checkout $(git mb)
@@ -78,7 +79,6 @@
 	slc = "!f () { git s | awk '{print $2}' | xargs -I % -n 1 git slCommitOne %; }; f"
 	slCommitOne = "!f () { fileName=${1}; git log -n 1 $fileName | head -n 1 | cut -d ' ' -f2 | xargs -I {} git slAddAndFixup $fileName {}; }; f $1"
 	slAddAndFixup = "!f () { fileName=${1}; sha=${2}; git a $fileName && git fixup $sha; }; f $1 $2"
-	mb = "!f () { git branch --remote | awk '{print $1}' | rg '^origin/(develop|master|main)$' | head -n 1 | sed 's/origin\\///'; }; f"
 [core]
 	excludesfile = ~/.gitignore
 	pager = diff-so-fancy | less --tabs=4 -RFX
