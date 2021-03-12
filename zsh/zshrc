@@ -163,3 +163,5 @@ export FTR_ROOT_KEY_PATH=~/local/key.pem
 ~/.zshrc_private.sh
 
 export PATH=/Users/francescoferraioli/.scripts:$PATH
+
+alias tunnel_prod='AWS_PROFILE=ftrlabs-production DEV_SSH_KEY=ftr-labs-production tunnel_sandbox_db'
