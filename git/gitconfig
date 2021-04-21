@@ -96,8 +96,8 @@
 
 	# Private
 	slOne = "!f () { fileName=${1}; count=${2:-3}; echo ===================== && echo $1 && echo ===================== && git l -n $count -- $fileName && echo --------------------- && echo; }; f $1 $2"
-	slCommitOne = "!f () { fileName=${1}; git log -n 1 $fileName | head -n 1 | cut -d ' ' -f2 | xargs -I {} git slAddAndFixup $fileName {}; }; f $1"
-	slAddAndFixup = "!f () { fileName=${1}; sha=${2}; git a $fileName && git fixup $sha; }; f $1 $2"
+	slCommitOne = "!f () { fileName=${1}; git log -n 1 -- $fileName | head -n 1 | cut -d ' ' -f2 | xargs -I {} git slAddAndFixup $fileName {}; }; f $1"
+	slAddAndFixup = "!f () { fileName=${1}; sha=${2}; git a -- $fileName && git fixup $sha; }; f $1 $2"
 [core]
 	excludesfile = ~/.gitignore
 	pager = diff-so-fancy | less --tabs=4 -RFX
