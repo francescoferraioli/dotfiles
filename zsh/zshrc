@@ -167,3 +167,5 @@ export NPM_TOKEN=`cat ~/.npmrc | sed "s/\/\/registry.npmjs.org\/:_authToken=//"`
 export PATH=/Users/francescoferraioli/.scripts:$PATH
 
 alias tunnel_prod='AWS_PROFILE=ftrlabs-production DEV_SSH_KEY=ftr-labs-production tunnel_sandbox_db'
+
+alias trm2aac='FTR_CONVERTER_PATH=~/code/ftr-converter trm_to_aacs'
