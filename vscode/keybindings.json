@@ -1,0 +1,52 @@
+[
+  {
+    "key": "cmd+enter",
+    "command": "editor.action.quickFix",
+    "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+.",
+    "command": "-editor.action.quickFix",
+    "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+cmd+z",
+    "command": "extension.switchTemplate"
+  },
+  {
+    "key": "shift+alt+o",
+    "command": "-extension.switchTemplate"
+  },
+  {
+    "key": "ctrl+cmd+x",
+    "command": "extension.switchTs"
+  },
+  {
+    "key": "shift+alt+u",
+    "command": "-extension.switchTs"
+  },
+  {
+    "key": "ctrl+cmd+c",
+    "command": "extension.switchStyle"
+  },
+  {
+    "key": "shift+alt+i",
+    "command": "-extension.switchStyle"
+  },
+  {
+    "key": "ctrl+cmd+v",
+    "command": "extension.switchSpec"
+  },
+  {
+    "key": "shift+alt+p",
+    "command": "-extension.switchSpec"
+  },
+  {
+    "key": "shift+cmd+;",
+    "command": "git.openChange"
+  },
+  {
+    "key": "cmd+;",
+    "command": "git.openFile"
+  }
+]
