@@ -38,6 +38,7 @@
 	mb = "!f () { git branch --remote | awk '{print $1}' | rg '^origin/(develop|master|main)$' | head -n 1 | sed 's/origin\\///'; }; f"
 	co = checkout
 	cob = checkout -b
+	coc = checkout -
 	com = !git checkout $(git mb)
 	sm = "!f() { git branch --merged $(git mb) | grep -v '^[ *]*$(git mb)$'; }; f"
 	dm = "!f() { git sm | xargs git branch -d; }; f"
