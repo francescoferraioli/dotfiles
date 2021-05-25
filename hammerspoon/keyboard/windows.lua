@@ -5,7 +5,7 @@ hs.window.animationDuration = 0
 -- |  HERE  |        |
 -- |        |        |
 -- +-----------------+
-function hs.window.left(win)
+function left(win)
   local f = win:frame()
   local screen = win:screen()
   local max = screen:frame()
@@ -22,7 +22,7 @@ end
 -- |        |  HERE  |
 -- |        |        |
 -- +-----------------+
-function hs.window.right(win)
+function right(win)
   local f = win:frame()
   local screen = win:screen()
   local max = screen:frame()
@@ -39,7 +39,7 @@ end
 -- +-----------------+
 -- |                 |
 -- +-----------------+
-function hs.window.up(win)
+function up(win)
   local f = win:frame()
   local screen = win:screen()
   local max = screen:frame()
@@ -56,7 +56,7 @@ end
 -- +-----------------+
 -- |      HERE       |
 -- +-----------------+
-function hs.window.down(win)
+function down(win)
   local f = win:frame()
   local screen = win:screen()
   local max = screen:frame()
@@ -73,7 +73,7 @@ end
 -- +--------+        |
 -- |                 |
 -- +-----------------+
-function hs.window.upLeft(win)
+function upLeft(win)
   local f = win:frame()
   local screen = win:screen()
   local max = screen:fullFrame()
@@ -90,7 +90,7 @@ end
 -- +--------+        |
 -- |  HERE  |        |
 -- +-----------------+
-function hs.window.downLeft(win)
+function downLeft(win)
   local f = win:frame()
   local screen = win:screen()
   local max = screen:fullFrame()
@@ -107,7 +107,7 @@ end
 -- |        +--------|
 -- |        |  HERE  |
 -- +-----------------+
-function hs.window.downRight(win)
+function downRight(win)
   local f = win:frame()
   local screen = win:screen()
   local max = screen:fullFrame()
@@ -125,7 +125,7 @@ end
 -- |        +--------|
 -- |                 |
 -- +-----------------+
-function hs.window.upRight(win)
+function upRight(win)
   local f = win:frame()
   local screen = win:screen()
   local max = screen:fullFrame()
@@ -142,7 +142,7 @@ end
 -- |  |  HERE  |  |
 -- |  |        |  |
 -- +---------------+
-function hs.window.centerWithFullHeight(win)
+function centerWithFullHeight(win)
   local f = win:frame()
   local screen = win:screen()
   local max = screen:fullFrame()
@@ -159,7 +159,7 @@ end
 -- | HERE |          |
 -- |      |          |
 -- +-----------------+
-function hs.window.left40(win)
+function left40(win)
   local f = win:frame()
   local screen = win:screen()
   local max = screen:frame()
@@ -176,7 +176,7 @@ end
 -- |      |   HERE   |
 -- |      |          |
 -- +-----------------+
-function hs.window.right60(win)
+function right60(win)
   local f = win:frame()
   local screen = win:screen()
   local max = screen:frame()
@@ -188,7 +188,7 @@ function hs.window.right60(win)
   win:setFrame(f)
 end
 
-function hs.window.nextScreen(win)
+function nextScreen(win)
   local currentScreen = win:screen()
   local allScreens = hs.screen.allScreens()
   currentScreenIndex = hs.fnutils.indexOf(allScreens, currentScreen)
@@ -258,7 +258,33 @@ for i, mapping in ipairs(mappings) do
   windowLayoutMode:bindWithAutomaticExit(modifiers, trigger, function()
     --example: hs.window.focusedWindow():upRight()
     local fw = hs.window.focusedWindow()
-    fw[winFunction](fw)
+    if winFunction == "left" then
+      left(fw)
+    elseif winFunction == "right" then
+      right(fw)
+    elseif winFunction == "up" then
+      up(fw)
+    elseif winFunction == "down" then
+      down(fw)
+    elseif winFunction == "upLeft" then
+      upLeft(fw)
+    elseif winFunction == "upRight" then
+      upRight(fw)
+    elseif winFunction == "downLeft" then
+      downLeft(fw)
+    elseif winFunction == "downRight" then
+      downRight(fw)
+    elseif winFunction == "centerWithFullHeight" then
+      centerWithFullHeight(fw)
+    elseif winFunction == "left40" then
+      left40(fw)
+    elseif winFunction == "right60" then
+      right60(fw)
+    elseif winFunction == "nextScreen" then
+      nextScreen(fw)
+    else
+      fw[winFunction](fw)
+    end
   end)
 end
 
