@@ -76,7 +76,7 @@ end
 function upLeft(win)
   local f = win:frame()
   local screen = win:screen()
-  local max = screen:fullFrame()
+  local max = screen:frame()
 
   f.x = max.x
   f.y = max.y
@@ -93,7 +93,7 @@ end
 function downLeft(win)
   local f = win:frame()
   local screen = win:screen()
-  local max = screen:fullFrame()
+  local max = screen:frame()
 
   f.x = max.x
   f.y = max.y + (max.h / 2)
@@ -110,7 +110,7 @@ end
 function downRight(win)
   local f = win:frame()
   local screen = win:screen()
-  local max = screen:fullFrame()
+  local max = screen:frame()
 
   f.x = max.x + (max.w / 2)
   f.y = max.y + (max.h / 2)
@@ -128,7 +128,7 @@ end
 function upRight(win)
   local f = win:frame()
   local screen = win:screen()
-  local max = screen:fullFrame()
+  local max = screen:frame()
 
   f.x = max.x + (max.w / 2)
   f.y = max.y
@@ -145,7 +145,7 @@ end
 function centerWithFullHeight(win)
   local f = win:frame()
   local screen = win:screen()
-  local max = screen:fullFrame()
+  local max = screen:frame()
 
   f.x = max.x + (max.w / 5)
   f.w = max.w * 3/5
