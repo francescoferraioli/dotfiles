@@ -9,6 +9,7 @@ brew install rg
 brew install fzf 
 brew install bat
 brew install jq
+brew install watch
 
 # NODE
 brew install node
