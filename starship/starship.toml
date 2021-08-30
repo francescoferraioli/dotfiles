@@ -24,8 +24,3 @@ modified = " | !"
 staged = " | +"
 renamed = " | »"
 deleted = " | ✘"
-
-[character]
-symbol = "λ"
-vicmd_symbol = "❯"
-use_symbol_for_status = true
