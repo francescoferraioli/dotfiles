@@ -14,6 +14,8 @@ brew install --cask lastpass
 brew install --cask 1password
 brew install --cask slack
 brew install --cask spotify
+brew install --cask keycastr
+brew install --cask macvim
 
 # FONTS
 brew tap homebrew/cask-fonts
