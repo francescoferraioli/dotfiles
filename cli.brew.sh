@@ -13,6 +13,7 @@ brew install watch
 
 # NODE
 brew install node
+brew install volta
 
 # TMUX
 brew install tmux

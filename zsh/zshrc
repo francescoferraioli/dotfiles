@@ -139,6 +139,13 @@ add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
 ########################
+# VOLTA
+########################
+
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
+########################
 # DIR ENV
 ########################
 
