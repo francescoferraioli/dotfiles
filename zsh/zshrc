@@ -170,7 +170,7 @@ export PATH=/Users/francescoferraioli/code/ftr-dev-scripts/commands:$PATH
 export FTR_ROOT_CERT_PATH=~/local/certificate.pem
 export FTR_ROOT_KEY_PATH=~/local/key.pem
 
-export NPM_TOKEN=`cat ~/.npmrc | sed "s/\/\/registry.npmjs.org\/:_authToken=//"`
+export NPM_TOKEN=`cat ~/.npmrc | head -n 1 | sed "s/\/\/registry.npmjs.org\/:_authToken=//"`
 
 ~/.zshrc_private.sh
 
