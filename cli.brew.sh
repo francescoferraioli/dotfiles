@@ -23,3 +23,6 @@ brew install zsh
 brew install zsh-completions
 brew install zsh-syntax-highlighting
 brew install starship
+
+# DOCKER
+brew install lazydocker
