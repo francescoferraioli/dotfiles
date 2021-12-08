@@ -48,5 +48,9 @@
   {
     "key": "cmd+;",
     "command": "git.openFile"
+  },
+  {
+    "key": "ctrl+cmd+r",
+    "command": "gitlens.copyRemoteFileUrlToClipboard"
   }
 ]

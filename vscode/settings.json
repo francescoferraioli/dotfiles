@@ -1,9 +1,9 @@
 {
   "workbench.editor.enablePreview": false,
-  "[typescript]" : {
+  "[typescript]": {
       "editor.formatOnSave": true,
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "window.zoomLevel": 1,
   "explorer.confirmDelete": false,
   "gitlens.currentLine.enabled": false,
   "gitlens.hovers.currentLine.over": "line",
@@ -14,31 +14,38 @@
   "vim.statusBarColors.insert": "#6b630b",
   "vim.visualModeKeyBindingsNonRecursive": [
       {
-          "before": [
-              "p"
-          ],
-          "after": [
-              "p",
-              "g",
-              "v",
-              "y"
-          ]
+      "before": ["p"],
+      "after": ["p", "g", "v", "y"]
       }
   ],
   "vim.useSystemClipboard": true,
   "vim.leader": "|",
   "vim.hlsearch": true,
-  "vim.easymotionMarkerFontFamily": "Menlo",
   "vim.easymotion": false,
-  "vim.easymotionMarkerYOffset": 0,
-  "vim.easymotionMarkerHeight": 16,
-  "vim.easymotionMarkerFontSize": "16",
-  "editor.lineNumbers": "relative",
+  "editor.lineNumbers": "on",
   "workbench.colorCustomizations": {
       "statusBar.background": "#005f5f",
       "statusBar.noFolderBackground": "#005f5f",
       "statusBar.debuggingBackground": "#005f5f"
   },
   "workbench.iconTheme": "vscode-icons",
-  "breadcrumbs.enabled": true
+  "breadcrumbs.enabled": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "window.zoomLevel": 2,
+  "[jsonc]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.tabSize": 8,
+  "editor.cursorStyle": "line",
+  "editor.insertSpaces": false,
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+  "editor.wordWrap": "off",
+  "[typescriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.formatOnSave": true
+  },
+  "typescript.preferences.importModuleSpecifier": "project-relative",
+  "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
