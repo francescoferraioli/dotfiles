@@ -34,6 +34,7 @@
 
 	# Branch
 	b = branch
+	bo = "!f() { git branch | cut -c 3- | grep -v \"^$(git mb)$\"; }; f"
 	cb = "!f() { git branch | grep \\* | cut -d ' ' -f2; }; f"
 	mb = "!f () { git branch --remote | awk '{print $1}' | rg '^origin/(develop|master|main)$' | head -n 1 | sed 's/origin\\///'; }; f"
 	co = checkout
