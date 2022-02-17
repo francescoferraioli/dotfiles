@@ -22,6 +22,7 @@
 	fixup = commit --fixup
 	yeet = reset --hard HEAD
 	uncommit = reset --soft HEAD^
+	recommit = commit -C HEAD@{1}
 	rh = reset --hard
 	rho = !git rh origin/$(git cb)
 	wip = commit -m 'WIP'
