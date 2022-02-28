@@ -37,3 +37,6 @@ vnoremap S* c/*<C-r>"*/<Esc>
 vnoremap St c<lt>div><CR><C-r>"<Esc>
 " Surround in div tag and edit tag
 vnoremap St c<lt>div><CR><C-r>"<Esc>`<lt>lcw
+
+" Tab left in insert mode
+inoremap <S-Tab> <C-d>
