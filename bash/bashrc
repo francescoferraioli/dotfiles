@@ -2,3 +2,11 @@ eval "$(starship init bash)"
 __git_complete g __git_main
 set -o vi
 export PATH=$PATH:/c/Users/FrancescoFerraioli/scripts
+
+alias g="git"
+alias c="code"
+alias v="vim"
+alias y="yarn"
+alias d="docker"
+alias dc="docker-compose"
+alias lzd="lazydocker"
