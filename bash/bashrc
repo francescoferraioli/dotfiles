@@ -1,0 +1,4 @@
+eval "$(starship init bash)"
+__git_complete g __git_main
+set -o vi
+export PATH=$PATH:/c/Users/FrancescoFerraioli/scripts
