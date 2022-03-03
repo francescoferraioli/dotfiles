@@ -18,3 +18,4 @@ __git_complete g __git_main
 
 # Adding to path
 export PATH=$PATH:/c/Users/FrancescoFerraioli/scripts
+export PATH=$PATH:/c/Users/FrancescoFerraioli/scripts/wsl
