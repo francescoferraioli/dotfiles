@@ -1,8 +1,7 @@
+# Run starship
 eval "$(starship init bash)"
-__git_complete g __git_main
-set -o vi
-export PATH=$PATH:/c/Users/FrancescoFerraioli/scripts
 
+# Add aliases
 alias g="git"
 alias c="code"
 alias v="vim"
@@ -10,3 +9,12 @@ alias y="yarn"
 alias d="docker"
 alias dc="docker-compose"
 alias lzd="lazydocker"
+
+# Set VI mode
+set -o vi
+
+# Add completion for the g alias
+__git_complete g __git_main
+
+# Adding to path
+export PATH=$PATH:/c/Users/FrancescoFerraioli/scripts
