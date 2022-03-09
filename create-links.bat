@@ -1,5 +1,7 @@
-mklink /H .bashrc dotfiles\bash\bashrc
-mklink /H .gitconfig dotfiles\git\gitconfig
-mklink /H .vimrc dotfiles\vim\vimrc
-mklink /H .vsvimrc dotfiles\vim\vsvimrc
-mklink /H .config\starship.toml dotfiles\starship\starship.toml
+:: Run this from the root
+@echo off
+call .\dotfiles\create-link.bat .bashrc dotfiles\bash\bashrc
+call .\dotfiles\create-link.bat .gitconfig dotfiles\git\gitconfig
+call .\dotfiles\create-link.bat .vimrc dotfiles\vim\vimrc
+call .\dotfiles\create-link.bat .vsvimrc dotfiles\vim\vsvimrc
+call .\dotfiles\create-link.bat .config\starship.toml dotfiles\starship\starship.toml
