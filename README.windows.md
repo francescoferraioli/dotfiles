@@ -1,14 +1,14 @@
 # Installation
 
 ```
-./cli.choco.bat
-./cli.npm.bat
+./cli.choco.cmd
+./cli.npm.cmd
 ```
 
 In a windows terminal session running as administrator run
 
 ```
-create-links.bat
+create-links.cmd
 ```
 
 ## Caps Lock -> Escape
