@@ -16,3 +16,4 @@ create-links.bat
 - [PowerToys](https://docs.microsoft.com/en-us/windows/powertoys/install)
 - [GIT](https://git-scm.com/downloads)
 - [Alt-Tab Terminator](https://www.ntwind.com/software/alttabter.html)
+  - Key can be found in 1Password
