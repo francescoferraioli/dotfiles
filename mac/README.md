@@ -1,5 +1,5 @@
 # Installation
 
 ```
-./once.sh
+~/dotfiles/mac/once.sh
 ```

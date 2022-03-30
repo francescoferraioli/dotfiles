@@ -1,3 +1,5 @@
+cd ~
+
 ###############
 # INSTALLERS
 ###############
@@ -9,8 +11,8 @@
 ###############
 # CLI INSTALL
 ###############
-./cli.nix.sh
-./cli.brew.sh
+./dotfiles/mac/cli.nix.sh
+./dotfiles/mac/cli.brew.sh
 
 ###############
 # SCRIPTS
@@ -37,7 +39,7 @@ git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shel
 ###############
 # DOTFILES SYMLINKS
 ###############
-./create-links.sh
+./dotfiles/mac/create-links.sh
 
 ###############
 # APPLE SETTINGS
@@ -48,4 +50,4 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 ###############
 # APP INSTALL
 ###############
-./cask.brew.sh
+./dotfiles/mac/cask.brew.sh

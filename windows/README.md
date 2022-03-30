@@ -3,9 +3,7 @@
 In a windows terminal session running as administrator run
 
 ```
-./cli.choco.cmd
-./cli.npm.cmd
-./create-links.cmd
+.\dotfiles\windows\once.cmd
 ```
 
 ## Caps Lock -> Escape
