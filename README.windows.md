@@ -1,14 +1,11 @@
 # Installation
 
-```
-./cli.choco.cmd
-./cli.npm.cmd
-```
-
 In a windows terminal session running as administrator run
 
 ```
-create-links.cmd
+./cli.choco.cmd
+./cli.npm.cmd
+./create-links.cmd
 ```
 
 ## Caps Lock -> Escape
