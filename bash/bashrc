@@ -22,3 +22,15 @@ export PATH=$PATH:/c/Users/FrancescoFerraioli/scripts/wsl
 
 # Save history
 PROMPT_COMMAND="${PROMPT_COMMAND} && history -a"
+
+z () {
+	if [ -z $1 ]; then
+		return;
+	fi
+
+	Z_BEST_MATCH=$(ls -1 | rg $1 | head -n 1)
+
+	if [ ! -z $Z_BEST_MATCH ]; then
+		cd $Z_BEST_MATCH
+	fi
+}
