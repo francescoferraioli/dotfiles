@@ -28,8 +28,14 @@ export PATH=/usr/local/bin:$PATH
 # Add my scripts
 export PATH=$HOME/scripts:$PATH
 
-# Add RVM
+########################
+# RVM
+########################
 export PATH=$HOME/.rvm/bin:$PATH
+RVM_SOURCE_SCRIPT=$HOME/.rvm/scripts/rvm
+if test -f "$RVM_SOURCE_SCRIPT"; then
+  source $RVM_SOURCE_SCRIPT
+fi
 
 ########################
 # SYNTAX HIGHLIGHTING
