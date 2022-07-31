@@ -141,10 +141,16 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 # Z
 ########################
 
-. /usr/local/etc/profile.d/z.sh
+Z_INIT_FILE="/usr/local/etc/profile.d/z.sh"
+if test -f "$Z_INIT_FILE"; then
+  . $Z_INIT_FILE 
+fi
 
 ########################
 # LOCAL
 ########################
 
-~/.zshrc_private.sh
+ZSH_PRIVATE_FILE="~/.zshrc_private.sh"
+if test -f "$ZSH_PRIVATE_FILE"; then
+  . $ZSH_PRIVATE_FILE 
+fi
