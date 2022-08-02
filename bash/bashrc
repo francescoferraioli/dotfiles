@@ -34,3 +34,8 @@ z () {
 		cd $Z_BEST_MATCH
 	fi
 }
+
+repos () {
+	cd ~/source/repos
+	z $1
+}
