@@ -28,7 +28,7 @@ z () {
 		return;
 	fi
 
-	Z_BEST_MATCH=$(ls -1 | rg $1 | head -n 1)
+	Z_BEST_MATCH=$(ls -1 | rg -i $1 | head -n 1)
 
 	if [ ! -z $Z_BEST_MATCH ]; then
 		cd $Z_BEST_MATCH
