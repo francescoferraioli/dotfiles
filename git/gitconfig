@@ -78,6 +78,9 @@
 	ps = push
 	psfl = push --force-with-lease
 	psu = "!f() { git cb | xargs -n 1 git push -u origin; }; f"
+	pr = !gh pr create
+	prf = !git pr -f
+	psuprf = !git psu && git prf
 	fmar = !git fetch && git rebase origin/$(git mb)
 	pa = "!f () { git fetch -p && for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`; do git branch -D $branch; done; }; f"
 	ppa = !git p && git pa
