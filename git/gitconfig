@@ -102,6 +102,9 @@
 	tdc = "!f () { git tagdelete $(git log -1 --pretty=%B); }; f"
 	tuc = "!f () { git tagupdate $(git log -1 --pretty=%B); }; f"
 
+	# Composite
+	comppa = "!f () { git com && git ppa; }; f"
+
 	# Private
 	slOne = "!f () { fileName=${1}; count=${2:-3}; echo ===================== && echo $1 && echo ===================== && git l -n $count -- $fileName && echo --------------------- && echo; }; f $1 $2"
 	slCommitOne = "!f () { fileName=${1}; git log -n 1 -- $fileName | head -n 1 | cut -d ' ' -f2 | xargs -I {} git slAddAndFixup $fileName {}; }; f $1"
