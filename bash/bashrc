@@ -42,3 +42,8 @@ repos () {
 	cd ~/source/repos
 	z $1
 }
+
+fe () {
+	repos q
+	cd SharedWebUi/modules/
+}
