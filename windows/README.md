@@ -1,6 +1,12 @@
 # Installation
 
-In a windows terminal session running as administrator run
+Install chocolately: https://chocolatey.org/install
+
+Install nvm: https://github.com/coreybutler/nvm-windows
+Run: `nvm install latest`
+Run: `nvm use %INSERT_LATEST%`
+
+In a windows command prompt session running as administrator run
 
 ```
 .\dotfiles\windows\once.cmd
