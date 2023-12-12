@@ -1,8 +1,10 @@
 {
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
   "workbench.editor.enablePreview": false,
   "[typescript]": {
-      "editor.formatOnSave": true,
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    // "editor.formatOnSave": true,
+    // "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "explorer.confirmDelete": false,
   "gitlens.currentLine.enabled": false,
@@ -13,10 +15,10 @@
   "vim.statusBarColors.replace": "#5f0000",
   "vim.statusBarColors.insert": "#6b630b",
   "vim.visualModeKeyBindingsNonRecursive": [
-      {
+    {
       "before": ["p"],
       "after": ["p", "g", "v", "y"]
-      }
+    }
   ],
   "vim.useSystemClipboard": true,
   "vim.leader": "|",
@@ -24,28 +26,51 @@
   "vim.easymotion": false,
   "editor.lineNumbers": "on",
   "workbench.colorCustomizations": {
-      "statusBar.background": "#005f5f",
-      "statusBar.noFolderBackground": "#005f5f",
-      "statusBar.debuggingBackground": "#005f5f"
+    "statusBar.background": "#005f87",
+    "statusBar.noFolderBackground": "#005f87",
+    "statusBar.debuggingBackground": "#005f87",
+    "statusBar.foreground": "#ffffff",
+    "statusBar.debuggingForeground": "#ffffff"
   },
   "workbench.iconTheme": "vscode-icons",
   "breadcrumbs.enabled": true,
   "diffEditor.ignoreTrimWhitespace": false,
-  "window.zoomLevel": 2,
-  "[jsonc]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "editor.tabSize": 8,
   "editor.cursorStyle": "line",
   "editor.insertSpaces": false,
   "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
   "editor.wordWrap": "off",
+  // "typescript.preferences.importModuleSpecifier": "project-relative",
+  "security.workspace.trust.untrustedFiles": "open",
+  "editor.codeLens": false,
+  "git.enableSmartCommit": true,
+  "eslint.format.enable": true,
   "[typescriptreact]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode",
-      "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
-  "typescript.preferences.importModuleSpecifier": "project-relative",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "git.confirmSync": false,
+  "[javascript]": {
+    // "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[json]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "explorer.confirmDragAndDrop": false,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // "editor.codeActionsOnSave": {
+  //   "source.fixAll": true
+  // }
+  "karmaTestExplorer.projectType": "karma",
+  "karmaTestExplorer.testGrouping": "suite",
+  "vim.handleKeys": {
+    "<C-p>": false
+  },
+  "window.zoomLevel": 2,
+  "editor.accessibilitySupport": "off"
 }

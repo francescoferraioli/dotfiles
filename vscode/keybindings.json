@@ -77,6 +77,10 @@
     "key": "ctrl+shift+alt+s",
     "command": "workbench.action.files.saveAs"
   },
+	{
+		"key": "ctrl+shift+s",
+		"command": "-workbench.action.files.saveAs"
+	},
   {
     "key": "ctrl+shift+s",
     "command": "saveAll"
@@ -121,8 +125,26 @@
     "when": "editorTextFocus && vim.active && vim.use<C-a> && !inDebugRepl"
   },
   {
+		"command": "runCommands",
+		"key": "ctrl+alt+shift+q",
+		"args": {
+			"commands": [
+				"workbench.action.toggleMaximizedPanel",
+				"workbench.action.focusActiveEditorGroup",
+			]
+		},
+		"when": "terminalFocus"
+	},
+	{
+		"command": "runCommands",
     "key": "ctrl+alt+shift+q",
-    "command": "workbench.action.toggleMaximizedPanel"
+		"args": {
+			"commands": [
+				"workbench.action.toggleMaximizedPanel",
+				"workbench.action.terminal.focus"
+			]
+		},
+		"when": "editorTextFocus"
   },
   {
     "key": "ctrl+shift+alt+b",
