@@ -19,6 +19,8 @@ __git_complete g __git_main
 # Adding to path
 export PATH=$PATH:/c/Users/FrancescoFerraioli/scripts
 export PATH=$PATH:/c/Users/FrancescoFerraioli/scripts/wsl
+export PATH=$PATH:/c/Users/Admin/scripts
+export PATH=$PATH:/c/Users/Admin/scripts/wsl
 
 # Save history
 PROMPT_COMMAND="${PROMPT_COMMAND} && history -a"
