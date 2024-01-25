@@ -45,6 +45,12 @@ repos () {
 	z $1
 }
 
+mono () {
+	repos $1
+	cd packages
+	z $2
+}
+
 fe () {
 	repos q
 	cd SharedWebUi/modules/
