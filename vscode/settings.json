@@ -72,5 +72,6 @@
     "<C-p>": false
   },
   "window.zoomLevel": 2,
-  "editor.accessibilitySupport": "off"
+  "editor.accessibilitySupport": "off",
+  "git.rebaseWhenSync": true
 }
