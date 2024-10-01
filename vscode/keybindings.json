@@ -159,5 +159,15 @@
     "args": {
       "text": "npm run build:deploy:dev \u000D"
     }
+  },
+  {
+    "key": "ctrl+y",
+    "command": "redo",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "u",
+    "command": "undo",
+    "when": "editorTextFocus && vim.active && vim.mode == 'Normal'"
   }
 ]
