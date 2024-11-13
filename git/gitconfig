@@ -36,16 +36,24 @@
 
 	# Branch
 	b = branch
+	# branches-other than main/master
 	bo = "!f() { git branch | cut -c 3- | grep -v \"^$(git mb)$\"; }; f"
+	# current-branch
 	cb = "!f() { git branch | grep \\* | cut -d ' ' -f2; }; f"
+	# main/master-branch
 	mb = "!f () { git branch --remote | awk '{print $1}' | rg '^origin/(develop|master|main)$' | head -n 1 | sed 's/origin\\///'; }; f"
 	co = checkout
 	cob = checkout -b
 	coc = checkout -
 	com = !git checkout $(git mb)
+	# show-merged
 	sm = "!f() { git branch --merged $(git mb) | grep -v '^[ *]*$(git mb)$'; }; f"
+	# delete-merged
 	dm = "!f() { git sm | xargs git branch -d; }; f"
+	# checkout-branch based on text (arg)
 	cobt = "!f () { echo $\"$1\" | sed 's/ /-/g' | awk '{$1=tolower($1)}1' | xargs -n 1 git checkout -b; }; f"
+	# branches-other delete
+	bod = "!f () { git bo | xargs git branch -D; }; f"
 
 	# Diff
 	d = diff
