@@ -4,6 +4,7 @@ eval "$(starship init bash)"
 # Add aliases
 alias g="git"
 alias c="code"
+alias cu="cursor"
 alias v="vim"
 alias y="yarn"
 alias d="docker"
