@@ -23,6 +23,7 @@
 	yeet = reset --hard HEAD
 	uncommit = reset --soft HEAD^
 	recommit = commit -C HEAD@{1}
+	emptycommit = "!f() { git unstage . && git commit -m 'empty commit' --allow-empty; }; f"
 	rh = reset --hard
 	rho = !git rh origin/$(git cb)
 	wip = commit -m 'WIP'
