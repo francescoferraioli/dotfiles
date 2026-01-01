@@ -34,6 +34,8 @@
 	s = status --short
 	sf = "!f () { git s | awk '{print $2}'; }; f"
 	st = status
+	# Will exit with 0 if the working directory is clean, otherwise it will exit with 1
+	se = "!test -z \"$(git status --porcelain)\""
 
 	# Branch
 	b = branch
