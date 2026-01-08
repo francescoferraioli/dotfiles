@@ -58,6 +58,8 @@
 	cobt = "!f () { echo $\"$1\" | sed 's/ /-/g' | awk '{$1=tolower($1)}1' | xargs -n 1 git checkout -b; }; f"
 	# branches-other delete
 	bod = "!f () { git bo | xargs git branch -D; }; f"
+	# check-master: errors if not on master/main branch
+	checkmaster = "!f() { current=$(git cb); master=$(git mb); if [ \"$current\" != \"$master\" ]; then echo \"Error: Not on $master branch. Current branch: $current\" >&2; exit 1; fi; }; f"
 
 	# Diff
 	d = diff
