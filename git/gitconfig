@@ -1,6 +1,6 @@
 [user]
 	name = Francesco Ferraioli
-	email = francesco.ferraioli@outlook.com
+	email = frankief@canva.com
 [color]
 	ui = true
 [pager]
@@ -130,7 +130,6 @@
 [core]
 	excludesfile = ~/.gitignore
 	pager = diff-so-fancy | less --tabs=4 -RFX
-	autocrlf = true
 [help]
 	autocorrect = 1
 [push]
@@ -165,3 +164,7 @@
 
 [includeIf "gitdir:~/source/"]
   path = .gitconfig-displayr
+[trace2]
+	eventtarget = af_unix:dgram:/tmp/olly-git-trace2.sock
+[maintenance]
+	repo = /Users/frankie/work/canva
