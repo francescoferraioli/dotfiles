@@ -18,6 +18,9 @@ export MYVIMRC="~/.vimrc"
 export TERM="xterm-256color"
 export ASPNETCORE_ENVIRONMENT=Development
 
+# This is for canva to display the correct locale
+export USER_LOCALE=en
+
 ########################
 # SETTING PATH
 ########################
