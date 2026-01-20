@@ -165,3 +165,7 @@ ZSH_PRIVATE_FILE="~/.zshrc_private.sh"
 if test -f "$ZSH_PRIVATE_FILE"; then
   . $ZSH_PRIVATE_FILE 
 fi
+
+cweb () {
+	cd ~/work/canva/web
+}

@@ -57,11 +57,6 @@ mono () {
 	z $2 d
 }
 
-fe () {
-	repos q
-	cd SharedWebUi/modules/
-}
-
 BASH_PRIVATE_FILE="~/.bashrc_private.sh"
 if test -f "$BASH_PRIVATE_FILE"; then
   . $BASH_PRIVATE_FILE 
