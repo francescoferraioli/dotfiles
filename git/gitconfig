@@ -1,6 +1,6 @@
 [user]
 	name = Francesco Ferraioli
-	email = frankief@canva.com
+	email = francesco.ferraioli@outlook.com
 [color]
 	ui = true
 [pager]
@@ -162,8 +162,8 @@
 	process = git-lfs filter-process
 	required = true
 
-[includeIf "gitdir:~/source/"]
-  path = .gitconfig-displayr
+[includeIf "gitdir:~/work/"]
+  path = ~/.gitconfig-canva
 [trace2]
 	eventtarget = af_unix:dgram:/tmp/olly-git-trace2.sock
 [maintenance]
