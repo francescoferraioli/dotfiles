@@ -8,6 +8,9 @@ $line_break\
 $character\
 """
 
+# To allow ahead/behind status to be shown for canva as it's a bit slow
+command_timeout = 2000
+
 [directory]
 truncate_to_repo = false
 truncation_length = 0

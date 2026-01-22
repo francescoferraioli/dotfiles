@@ -168,3 +168,5 @@
 	eventtarget = af_unix:dgram:/tmp/olly-git-trace2.sock
 [maintenance]
 	repo = /Users/frankie/work/canva
+[status]
+	aheadBehind = true
