@@ -22,7 +22,7 @@
                         ]
                     },
                     {
-                        "description": "iTerm2: Swap Cmd and Ctrl for C / D / R",
+                        "description": "iTerm2: Swap Cmd and Ctrl for C / R",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -40,27 +40,6 @@
                                 "to": [
                                     {
                                         "key_code": "c",
-                                        "modifiers": ["control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.googlecode\\.iterm2$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "d",
-                                    "modifiers": { "mandatory": ["command"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "d",
                                         "modifiers": ["control"]
                                     }
                                 ],
@@ -103,27 +82,6 @@
                                 "to": [
                                     {
                                         "key_code": "c",
-                                        "modifiers": ["command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.googlecode\\.iterm2$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "d",
-                                    "modifiers": { "mandatory": ["control"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "d",
                                         "modifiers": ["command"]
                                     }
                                 ],
