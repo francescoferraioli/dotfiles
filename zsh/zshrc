@@ -154,7 +154,7 @@ eval "$(fnm env --use-on-cd)"
 # Z
 ########################
 
-Z_INIT_FILE="/usr/local/etc/profile.d/z.sh"
+Z_INIT_FILE="/opt/homebrew/etc/profile.d/z.sh"
 if test -f "$Z_INIT_FILE"; then
   . $Z_INIT_FILE 
 fi
@@ -170,4 +170,32 @@ fi
 
 cweb () {
 	cd ~/work/canva/web
+}
+
+repos () {
+	cd ~/work
+	zz $1
+}
+
+apps () {
+	cd ~/apps
+	zz $1
+}
+
+zz () {
+	if [ -z $1 ]; then
+		return;
+	fi
+
+	if [ "$2" = "f" ]; then
+		Z_BEST_MATCH=$(ls -1 -p | grep -v / | rg -i $1 | head -n 1)
+	elif [ "$2" = "d" ]; then
+		Z_BEST_MATCH=$(ls -1 -p | grep / | rg -i $1 | head -n 1)
+	else
+		Z_BEST_MATCH=$(ls -1 | rg -i $1 | head -n 1)
+	fi
+
+	if [ ! -z $Z_BEST_MATCH ]; then
+		cd $Z_BEST_MATCH
+	fi
 }
