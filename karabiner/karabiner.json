@@ -228,7 +228,7 @@
                         ]
                     },
                     {
-                        "description": "Ctrl+Shift+S → macOS area screenshot to clipboard (Ctrl+Cmd+Shift+4)",
+                        "description": "Ctrl+Shift+S → macOS area screenshot (Cmd+Shift+Cont+4)",
                         "manipulators": [
                             {
                                 "from": {
@@ -238,7 +238,7 @@
                                 "to": [
                                     {
                                         "key_code": "4",
-                                        "modifiers": ["control", "command", "shift"]
+                                        "modifiers": ["command", "shift", "control"]
                                     }
                                 ],
                                 "type": "basic"
