@@ -41,6 +41,18 @@ if test -f "$RVM_SOURCE_SCRIPT"; then
 fi
 
 ########################
+# COMPLETIONS
+########################
+
+# Enable completion system
+autoload -Uz compinit && compinit
+
+# Enable git completion (if using Homebrew git)
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+fi
+
+########################
 # SYNTAX HIGHLIGHTING
 ########################
 
@@ -116,6 +128,9 @@ alias p="pnpm"
 alias d="docker"
 alias dc="docker-compose"
 alias lzd="lazydocker"
+
+# Enable completion for aliases
+compdef g=git
 
 ########################
 # NVM
