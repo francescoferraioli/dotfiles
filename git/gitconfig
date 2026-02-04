@@ -170,8 +170,6 @@
 
 [includeIf "gitdir:~/work/"]
   path = ~/.gitconfig-canva
-[trace2]
-	eventTarget = af_unix:dgram:/tmp/olly-git-trace2.sock
 [maintenance]
 	repo = /Users/frankie/work/canva
 	repo = /Users/frankie/work/canva-dev
