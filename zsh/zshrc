@@ -56,7 +56,8 @@ fi
 # SYNTAX HIGHLIGHTING
 ########################
 
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# Disabling as it's not working right now
+# source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ########################
 # Zsh VIM Style editing
@@ -93,7 +94,8 @@ fi
 
 # Key bindings
 # ------------
-source "/usr/local/opt/fzf/shell/key-bindings.zsh"
+# Disabling as it's not working right now
+# source "/usr/local/opt/fzf/shell/key-bindings.zsh"
 
 # Options
 # ------------
