@@ -13,6 +13,8 @@
 	discard = checkout --
 	patch = add --patch
 	unstage = reset HEAD
+	yeet = reset --hard HEAD
+	nuke = "!git yeet && git clean -fd"
 
 	# Committing
 	amend = commit --amend --no-edit
@@ -20,7 +22,6 @@
 	cm = commit --message
 	cp = cherry-pick
 	fixup = commit --fixup
-	yeet = reset --hard HEAD
 	uncommit = reset --soft HEAD^
 	recommit = commit -C HEAD@{1}
 	emptycommit = "!f() { git unstage . && git commit -m 'empty commit' --allow-empty; }; f"
@@ -175,3 +176,5 @@
 	repo = /Users/frankie/work/canva-dev
 [status]
 	aheadBehind = true
+[trace2]
+	eventtarget = af_unix:dgram:/tmp/olly-git-trace2.sock
