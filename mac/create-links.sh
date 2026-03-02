@@ -15,6 +15,7 @@ create_dir_link() {
 echo ""
 echo "Setting up gitconfig links"
 create_link ~/.gitconfig ~/dotfiles/git/gitconfig
+create_link ~/.gitconfig-canva ~/dotfiles/git/gitconfig-canva
 
 echo ""
 echo "Setting up gitignore links"
