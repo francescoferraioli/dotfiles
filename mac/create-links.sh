@@ -24,15 +24,15 @@ echo ""
 echo "Setting up zsh links"
 create_link ~/.zshrc ~/dotfiles/zsh/zshrc
 
-echo ""
-echo "Setting up alacritty links"
-rm -rf ~/.config/alacritty
-create_link ~/.alacritty.yml ~/dotfiles/alacritty/alacritty.yml
+# echo ""
+# echo "Setting up alacritty links"
+# rm -rf ~/.config/alacritty
+# create_link ~/.alacritty.yml ~/dotfiles/alacritty/alacritty.yml
 
-echo ""
-echo "Setting up vim links"
-create_link ~/.vimrc ~/dotfiles/vim/vimrc
-create_link ~/.ideavimrc ~/dotfiles/vim/ideavimrc
+# echo ""
+# echo "Setting up vim links"
+# create_link ~/.vimrc ~/dotfiles/vim/vimrc
+# create_link ~/.ideavimrc ~/dotfiles/vim/ideavimrc
 
 echo ""
 echo "Setting up tmux links"
@@ -42,16 +42,16 @@ echo ""
 echo "Setting up starship links"
 create_link ~/.config/starship.toml ~/dotfiles/starship/starship.toml
 
-echo ""
-echo "Setting up hammerspoon links"
-mkdir ~/.hammerspoon
-create_link ~/.hammerspoon/init.lua ~/dotfiles/hammerspoon/init.lua
-create_dir_link ~/.hammerspoon/keyboard ~/dotfiles/hammerspoon/keyboard
+# echo ""
+# echo "Setting up hammerspoon links"
+# mkdir ~/.hammerspoon
+# create_link ~/.hammerspoon/init.lua ~/dotfiles/hammerspoon/init.lua
+# create_dir_link ~/.hammerspoon/keyboard ~/dotfiles/hammerspoon/keyboard
 
-echo ""
-echo "Setting up launch-agents links"
-mkdir ~/Library/LaunchAgents
-for filename in ~/dotfiles/launch-agents/*.plist; do
-    LAUNCH_AGENT_NAME=$(basename $filename)
-    create_link ~/Library/LaunchAgents/$LAUNCH_AGENT_NAME ~/dotfiles/launch-agents/$LAUNCH_AGENT_NAME
-done
+# echo ""
+# echo "Setting up launch-agents links"
+# mkdir ~/Library/LaunchAgents
+# for filename in ~/dotfiles/launch-agents/*.plist; do
+#     LAUNCH_AGENT_NAME=$(basename $filename)
+#     create_link ~/Library/LaunchAgents/$LAUNCH_AGENT_NAME ~/dotfiles/launch-agents/$LAUNCH_AGENT_NAME
+# done
