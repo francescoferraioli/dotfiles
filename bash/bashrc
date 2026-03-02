@@ -1,5 +1,5 @@
 # Run starship
-eval "$(starship init bash)"
+# eval "$(starship init bash)"
 
 # Add aliases
 alias g="git"
@@ -17,16 +17,14 @@ set -o vi
 __git_complete g __git_main
 
 # Adding to path
-export PATH=$PATH:/c/Users/FrancescoFerraioli/scripts
-export PATH=$PATH:/c/Users/FrancescoFerraioli/scripts/wsl
-export PATH=$PATH:/c/Users/Admin/scripts
-export PATH=$PATH:/c/Users/Admin/scripts/wsl
+export PATH=$PATH:~/scripts
+export PATH=$PATH:~/scripts/wsl
 
 # Save history
 PROMPT_COMMAND="${PROMPT_COMMAND} && history -a"
 
 # Persist current directory through splits
-PROMPT_COMMAND=${PROMPT_COMMAND:+"$PROMPT_COMMAND; "}'printf "\e]9;9;%s\e\\" "`cygpath -w "$PWD" -C ANSI`"'
+# PROMPT_COMMAND=${PROMPT_COMMAND:+"$PROMPT_COMMAND; "}'printf "\e]9;9;%s\e\\" "`cygpath -w "$PWD" -C ANSI`"'
 
 z () {
 	if [ -z $1 ]; then
