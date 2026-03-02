@@ -14,14 +14,14 @@ alias lzd="lazydocker"
 set -o vi
 
 # Add completion for the g alias
-__git_complete g __git_main
+# __git_complete g __git_main
 
 # Adding to path
 export PATH=$PATH:~/scripts
 export PATH=$PATH:~/scripts/wsl
 
 # Save history
-PROMPT_COMMAND="${PROMPT_COMMAND} && history -a"
+# PROMPT_COMMAND="${PROMPT_COMMAND} && history -a"
 
 # Persist current directory through splits
 # PROMPT_COMMAND=${PROMPT_COMMAND:+"$PROMPT_COMMAND; "}'printf "\e]9;9;%s\e\\" "`cygpath -w "$PWD" -C ANSI`"'
