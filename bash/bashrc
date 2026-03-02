@@ -47,7 +47,14 @@ z () {
 }
 
 repos () {
-	cd ~/source/repos
+	if [ -d ~/work ]; then
+		cd ~/work
+	elif [ -d ~/source/repos ]; then
+		cd ~/source/repos
+	else
+		echo "repos: neither ~/work nor ~/source/repos found" >&2
+		return 1
+	fi
 	z $1 d
 }
 
