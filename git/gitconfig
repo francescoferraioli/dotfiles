@@ -172,8 +172,8 @@
 [includeIf "gitdir:~/work/"]
   path = ~/.gitconfig-canva
 [maintenance]
-	repo = ~/work/canva
-	repo = ~/work/canva-dev
+	repo = /Users/frankie/work/canva-dev
+	repo = /Users/frankie/work/canva
 [status]
 	aheadBehind = true
 [trace2]
