@@ -25,6 +25,10 @@ echo ""
 echo "Setting up zsh links"
 create_link ~/.zshrc ~/dotfiles/zsh/zshrc
 
+echo ""
+echo "Setting up bash links"
+create_link ~/.bashrc ~/dotfiles/bash/bashrc
+
 # echo ""
 # echo "Setting up alacritty links"
 # rm -rf ~/.config/alacritty
