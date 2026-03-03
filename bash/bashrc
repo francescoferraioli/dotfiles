@@ -1,5 +1,14 @@
-# Run starship
-# eval "$(starship init bash)"
+if [ "$OS" = "Windows_NT" ] || [[ "$(uname -s)" =~ ^(MINGW|MSYS|CYGWIN) ]]; then
+	# Run starship
+	eval "$(starship init bash)"
+	# Add completion for the g alias
+	__git_complete g __git_main
+	export PATH=$PATH:~/scripts/wsl
+	# Save history
+	PROMPT_COMMAND="${PROMPT_COMMAND} && history -a"
+	# Persist current directory through splits
+	PROMPT_COMMAND=${PROMPT_COMMAND:+"$PROMPT_COMMAND; "}'printf "\e]9;9;%s\e\\" "`cygpath -w "$PWD" -C ANSI`"'
+fi
 
 # Add aliases
 alias g="git"
@@ -13,18 +22,8 @@ alias lzd="lazydocker"
 # Set VI mode
 set -o vi
 
-# Add completion for the g alias
-# __git_complete g __git_main
-
 # Adding to path
 export PATH=$PATH:~/scripts
-# export PATH=$PATH:~/scripts/wsl
-
-# Save history
-# PROMPT_COMMAND="${PROMPT_COMMAND} && history -a"
-
-# Persist current directory through splits
-# PROMPT_COMMAND=${PROMPT_COMMAND:+"$PROMPT_COMMAND; "}'printf "\e]9;9;%s\e\\" "`cygpath -w "$PWD" -C ANSI`"'
 
 z () {
 	if [ -z $1 ]; then
