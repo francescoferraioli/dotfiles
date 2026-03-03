@@ -18,6 +18,7 @@ alias y="yarn"
 alias d="docker"
 alias dc="docker-compose"
 alias lzd="lazydocker"
+alias p="pnpm"
 
 # Set VI mode
 set -o vi
