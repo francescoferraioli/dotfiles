@@ -66,6 +66,10 @@ sab  () {
 	mono sab $1
 }
 
+cweb () {
+	cd ~/work/canva/web
+}
+
 BASH_PRIVATE_FILE="~/.bashrc_private.sh"
 if test -f "$BASH_PRIVATE_FILE"; then
   . $BASH_PRIVATE_FILE 
