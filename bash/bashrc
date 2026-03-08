@@ -1,8 +1,6 @@
 if [ "$OS" = "Windows_NT" ] || [[ "$(uname -s)" =~ ^(MINGW|MSYS|CYGWIN) ]]; then
 	# Run starship
 	eval "$(starship init bash)"
-	# Add completion for the g alias
-	__git_complete g __git_main
 	export PATH=$PATH:~/scripts/wsl
 	# Save history
 	PROMPT_COMMAND="${PROMPT_COMMAND} && history -a"
@@ -19,6 +17,9 @@ alias d="docker"
 alias dc="docker-compose"
 alias lzd="lazydocker"
 alias p="pnpm"
+
+# Add completion for the g alias
+__git_complete g __git_main
 
 # Set VI mode
 set -o vi
