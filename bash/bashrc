@@ -1,12 +1,13 @@
 if [ "$OS" = "Windows_NT" ] || [[ "$(uname -s)" =~ ^(MINGW|MSYS|CYGWIN) ]]; then
-	# Run starship
-	eval "$(starship init bash)"
 	export PATH=$PATH:~/scripts/wsl
 	# Save history
 	PROMPT_COMMAND="${PROMPT_COMMAND} && history -a"
 	# Persist current directory through splits
 	PROMPT_COMMAND=${PROMPT_COMMAND:+"$PROMPT_COMMAND; "}'printf "\e]9;9;%s\e\\" "`cygpath -w "$PWD" -C ANSI`"'
 fi
+
+# Run starship
+eval "$(starship init bash)"
 
 # Add aliases
 alias g="git"
