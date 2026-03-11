@@ -1,4 +1,5 @@
 #!/bin/bash
+./dotfiles/canva-devbox/create-links.sh
 
 # Install diff-so-fancy
 npm install -g diff-so-fancy
