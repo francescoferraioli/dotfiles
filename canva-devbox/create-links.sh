@@ -25,3 +25,7 @@ create_link ~/.gitignore ~/dotfiles/git/gitignore
 echo ""
 echo "Setting up bash links"
 create_link ~/.bash.bashrc ~/dotfiles/bash/bashrc
+
+echo ""
+echo "Setting up starship links"
+create_link ~/.config/starship.toml ~/dotfiles/starship/starship.toml
