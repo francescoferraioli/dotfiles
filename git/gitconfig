@@ -178,6 +178,3 @@
 	repo = /Users/frankie/work/canva
 [status]
 	aheadBehind = true
-[trace2]
-	eventtarget = af_unix:dgram:/tmp/olly-git-trace2.sock
-	configparams = remote.origin.url
