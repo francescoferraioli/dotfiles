@@ -171,7 +171,7 @@
 
 [includeIf "gitdir:~/work/"]
   path = ~/.gitconfig-canva
-[includeIf "gitdir:~/source/repos"]
+[includeIf "gitdir:~/source/repos/"]
   path = ~/.gitconfig-gfm
 [maintenance]
 	repo = /Users/frankie/work/canva-dev
