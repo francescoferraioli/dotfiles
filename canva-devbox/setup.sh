@@ -9,8 +9,8 @@ sudo apt install fonts-powerline
 curl -sS https://starship.rs/install.sh | sh
 
 # Setup otter mcp
-otter claude-code mcp add otter otter mcp serve
 otter config mcp enable-all
+otter claude-code mcp add otter -- otter mcp serve
 
 # Clone my repos
 git clone https://github.com/francescoferraioli/scripts.git
