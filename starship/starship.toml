@@ -1,5 +1,5 @@
 format = """\ 
-$username\
+$username$hostname\
 $directory\
 $git_branch\
 $git_state\
@@ -10,6 +10,13 @@ $character\
 
 # To allow ahead/behind status to be shown for canva as it's a bit slow
 command_timeout = 2000
+
+[username]
+format = "[$user]($style)"
+
+[hostname]
+ssh_only = true
+format = "@[$hostname]($style) "
 
 [directory]
 truncate_to_repo = false
