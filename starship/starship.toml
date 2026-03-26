@@ -16,8 +16,8 @@ format = "[$user]($style)"
 
 [hostname]
 ssh_only = true
-format = "@[$hostname]($style) "
-style = "fg:#94a3b8"
+format = "[@$hostname]($style) "
+style = "bold yellow"
 
 [directory]
 truncate_to_repo = false
