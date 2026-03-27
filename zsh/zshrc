@@ -11,6 +11,12 @@
 eval "$(starship init zsh)"
 
 ########################
+# CLAUDE CODE
+########################
+
+export CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION=1
+
+########################
 # RANDOM ENV VARS
 ########################
 

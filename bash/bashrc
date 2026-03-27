@@ -35,6 +35,8 @@ fi
 # Set VI mode
 set -o vi
 
+export CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION=1
+
 # Adding to path
 export PATH=$PATH:~/scripts
 
