@@ -3,3 +3,4 @@
 .DS_Store/
 frankie_*.sh
 .skypageslocales/
+.frankie_local_ignore/
