@@ -130,7 +130,7 @@
 		"args": {
 			"commands": [
 				"workbench.action.toggleMaximizedPanel",
-				"workbench.action.focusActiveEditorGroup",
+				"workbench.action.focusActiveEditorGroup"
 			]
 		},
 		"when": "terminalFocus"
@@ -159,6 +159,30 @@
     "args": {
       "text": "npm run build:deploy:dev \u000D"
     }
+  },
+  {
+    "key": "cmd+c",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": "\u0003"
+    },
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+r",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": "\u0012"
+    },
+    "when": "terminalFocus"
+  },
+  {
+    "key": "cmd+o",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": "\u000F"
+    },
+    "when": "terminalFocus"
   },
   {
     "key": "ctrl+y",
