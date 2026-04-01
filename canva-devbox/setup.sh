@@ -27,4 +27,4 @@ otter config mcp secret jira_api_token "$JIRA_TOKEN"
 unset JIRA_TOKEN
 
 ./install.sh
-./create-links.sh
+./resync.sh
