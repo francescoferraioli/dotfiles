@@ -2,7 +2,7 @@
 
 # Required parameters:
 # @raycast.schemaVersion 1
-# @raycast.title My Script Command
+# @raycast.title Download Zoom Notes
 # @raycast.mode compact
 
 # Optional parameters:
