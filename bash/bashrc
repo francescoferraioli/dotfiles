@@ -19,6 +19,11 @@ alias dc="docker-compose"
 alias lzd="lazydocker"
 alias p="pnpm"
 
+# Devbox (coder user): route gh through ff so GitHub CLI is authorized in the devbox.
+if [[ "$OS" != "Windows_NT" ]] && [[ ! "$(uname -s 2>/dev/null)" =~ ^(MINGW|MSYS|CYGWIN) ]] && [[ "${USER:-}" == "coder" ]]; then
+	alias gh='ff devbox gh'
+fi
+
 # Add completion for the g alias (source git completion first; location varies by OS)
 if [[ -r /usr/share/bash-completion/completions/git ]]; then
 	# Linux (Debian/Ubuntu, etc.)
