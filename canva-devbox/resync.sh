@@ -12,7 +12,7 @@ declare -A create_links_path=(
 for repo in dotfiles scripts ff frankie-claude; do
   if [[ -d "$repo" ]]; then
     echo ">>> Pulling $repo..."
-    (cd "$repo" && git pull)
+    (cd "$repo" && git fetch && git reset --hard '@{u}')
     script="${create_links_path[$repo]:-create-links.sh}"
     if [[ -f "$repo/$script" ]]; then
       echo ">>> Running $repo $script..."
