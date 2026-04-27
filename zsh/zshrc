@@ -50,8 +50,9 @@ fi
 # COMPLETIONS
 ########################
 
-# Enable completion system
-autoload -Uz compinit && compinit
+# Enable completion system without interactive security prompt.
+# `-i` silently ignores insecure completion dirs instead of prompting each shell startup.
+autoload -Uz compinit && compinit -i
 
 # Enable git completion (if using Homebrew git)
 if type brew &>/dev/null; then
