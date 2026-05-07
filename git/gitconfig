@@ -94,6 +94,7 @@
 	ps = push
 	psfl = push --force-with-lease
 	psu = "!f() { git cb | xargs -n 1 git push -u origin; }; f"
+	url = "!f() { b=\"${1:-$(git branch --show-current)}\"; gh browse -b \"$b\" -n; }; f"
 	pr = !gh pr create
 	prf = !git pr -f
 	prw = !git pr -w
@@ -176,5 +177,7 @@
 [maintenance]
 	repo = /Users/frankie/work/canva-dev
 	repo = /Users/frankie/work/canva
+	repo = /Users/frankie/work/android-app
+	repo = /Users/frankie/work/ios-app
 [status]
 	aheadBehind = true
