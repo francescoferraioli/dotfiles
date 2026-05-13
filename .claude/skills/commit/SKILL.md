@@ -1,30 +1,37 @@
 ---
 name: commit
-description: After committing in the Canva repo on branch ff-canva, run master-resync to promote shared commits onto the main branch and rebuild ff-canva. Use when a commit just landed on ff-canva, when the user asks to sync after commit, or when finishing work on the FF Canva branch.
+description: On dotfiles branch ff-canva, the agent commits staged work with git, then runs post-commit-resync so main picks up shared commits and ff-canva ends as origin main plus exactly one personal marker commit. Use when the user asks to commit, /commit, or finish ff-canva work in this repo.
 ---
 
 ## When to use
 
-Use this skill **after** a successful commit when the active git repository is the **Canva** checkout (not dotfiles or other repos).
+Use in **this dotfiles repo** when the user wants to land work from **`ff-canva`**: changes become a **git commit** you create yourself, then run [post-commit-resync.sh](post-commit-resync.sh) so **`origin/$(git mb)`** gets the shared commits and **`ff-canva`** is **rebased on that remote mainline with exactly one commit on top** (the local-only marker commit, for example copy that mentions Canva or machine setup).
 
-## What to run
+If the user **already committed** and only needs the resync, skip straight to **post-commit-resync.sh**.
 
-Run [post-commit-resync.sh](post-commit-resync.sh) with bash. Resolve it from this skill directory (same folder as this file) or from the dotfiles repo root.
+## Primary flow (you commit, then script resyncs)
 
-From inside the Canva checkout (so `git rev-parse --show-toplevel` is that repo):
+1. Confirm repo is **this dotfiles checkout**, branch is **`ff-canva`**, and the working tree is ready (stage with `git add` as needed).
+2. Create the commit yourself: **`git commit -m "..."`** (use a clear, complete sentence; avoid leaving the editor open in automation).
+3. With a **clean** working tree after that commit, run:
 
 ```bash
 bash "${DOTFILES:-$HOME/dotfiles}/.claude/skills/commit/post-commit-resync.sh"
 ```
 
-If the shell cwd is not inside the Canva repo, pass the checkout path as the first argument:
+If cwd is not inside the repo, pass the dotfiles root:
 
 ```bash
-bash "${DOTFILES:-$HOME/dotfiles}/.claude/skills/commit/post-commit-resync.sh" /path/to/canva
+bash "${DOTFILES:-$HOME/dotfiles}/.claude/skills/commit/post-commit-resync.sh" "$HOME/dotfiles"
 ```
 
-The runner is [post-commit-resync.sh](post-commit-resync.sh). It exits with a clear message if the branch is not `ff-canva`. It sets `MASTER_RESYNC_REPO_ROOT` and runs [canva/master-resync.sh](../../../canva/master-resync.sh), which also requires a clean working tree and being on `ff-canva`.
+[post-commit-resync.sh](post-commit-resync.sh) runs [canva/master-resync.sh](../../../canva/master-resync.sh), which requires **clean** tree and **ff-canva**.
+
+## What success looks like
+
+- **`master-resync`** promoted any extra commits from `ff-canva` onto **`$(git mb)`**, pushed that branch, then reset **`ff-canva`** to **`origin/$(git mb)`** and replayed the **oldest** ff-canva-only commit (the personal marker).
+- After a full run, **`ff-canva`** must be **exactly one commit** ahead of **`origin/$(git mb)`**; `master-resync` checks this and fails if not.
 
 ## After it runs
 
-Summarize stdout and stderr. If the script exits non-zero, paste the error and suggest fixes (wrong branch, dirty tree, missing `ff-canva`, network or push failures).
+Summarize stdout and stderr. If anything exits non-zero, paste the error and suggest fixes (wrong branch, dirty tree, not this repo, missing `ff-canva`, network or push failures).
