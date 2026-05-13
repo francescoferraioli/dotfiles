@@ -5,10 +5,18 @@
 # (local-only) commit; every commit above that is shared work to cherry-pick onto mb.
 #
 # Requires: clean working tree, currently on ff-canva.
+# Optional: MASTER_RESYNC_REPO_ROOT points at the Canva checkout when this file is
+# invoked from elsewhere (e.g. dotfiles/.claude/skills/commit/post-commit-resync.sh).
 
 set -euo pipefail
 
-REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && git rev-parse --show-toplevel)"
+# When set (e.g. by dotfiles/.claude/skills/commit/post-commit-resync.sh), use this
+# checkout instead of inferring repo root from this file's path under canva/.
+if [[ -n "${MASTER_RESYNC_REPO_ROOT:-}" ]]; then
+	REPO_ROOT="$(cd "$MASTER_RESYNC_REPO_ROOT" && git rev-parse --show-toplevel)"
+else
+	REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && git rev-parse --show-toplevel)"
+fi
 cd "$REPO_ROOT"
 
 if ! git rev-parse --verify ff-canva >/dev/null 2>&1; then
