@@ -91,6 +91,7 @@
 	# Remote
 	f = fetch
 	p = pull
+	pb = "!git pull origin \"$(git branch --show-current)\""
 	ps = push
 	psfl = push --force-with-lease
 	psu = "!f() { git cb | xargs -n 1 git push -u origin; }; f"
