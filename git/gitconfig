@@ -107,6 +107,9 @@
 	fpa = !git f && git pa
 	pm = remote prune origin
 
+	# PR Train
+	prt = "!f () { git pr-train -- -$1; }; f $1"
+
 	# Tracking
 	trackingAdd = "!f() { git remote set-branches --add origin \"$1\"; }; f"
 	trackingRemove = "!f() { git config --fixed-value --unset remote.origin.fetch \"+refs/heads/$1:refs/remotes/origin/$1\"; }; f"
