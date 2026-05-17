@@ -27,5 +27,9 @@ echo "Setting up bash links"
 create_link ~/.bash.bashrc ~/dotfiles/bash/bashrc
 
 echo ""
+echo "Setting up tmux links"
+create_link ~/.tmux.conf ~/dotfiles/tmux/tmux.conf
+
+echo ""
 echo "Setting up starship links"
 create_link ~/.config/starship.toml ~/dotfiles/starship/starship.toml
