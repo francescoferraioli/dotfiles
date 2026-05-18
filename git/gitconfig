@@ -108,8 +108,9 @@
 	pm = remote prune origin
 
 	# PR Train
-	prt = "!f () { git pr-train \"-$1\"; }; f $1"
-	prtd = "!f () { ~/canvanauts/realyze-git-pr-train/dist/index.js \"-$1\"; }; f $1"
+	prTrainArg = "!f () { arg=\"$1\"; [[ \"$arg\" =~ ^[0-9]+$ ]] || arg=\"-$arg\"; printf '%s' \"$arg\"; }; f $1"
+	prt = "!f () { git pr-train \"$(git prTrainArg \"$1\")\"; }; f $1"
+	prtd = "!f () { ~/canvanauts/realyze-git-pr-train/dist/index.js \"$(git prTrainArg \"$1\")\"; }; f $1"
 
 	# Tracking
 	trackingAdd = "!f() { git remote set-branches --add origin \"$1\"; }; f"
