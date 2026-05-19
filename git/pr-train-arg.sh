@@ -7,7 +7,7 @@
 arg="$1"
 
 case "$(printf '%s' "$arg" | tr '[:upper:]' '[:lower:]')" in
-    previous|next|combined)
+    previous|next|combined|first|last)
         printf '%s' "$(printf '%s' "$arg" | tr '[:upper:]' '[:lower:]')"
         ;;
     '')
