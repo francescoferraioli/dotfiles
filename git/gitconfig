@@ -107,8 +107,8 @@
 	fpa = !git f && git pa
 	pm = remote prune origin
 
-	# PR Train
-	prTrainArg = "!f () { arg=\"$1\"; case \"$arg\" in ''|*[!0-9]*) arg=\"-$arg\";; *) arg=$((arg - 1));; esac; printf '%s' \"$arg\"; }; f $1"
+	# PR Train (arg logic: git/pr-train-arg.sh)
+	prTrainArg = !sh ~/dotfiles/git/pr-train-arg.sh
 	prt = "!f () { git pr-train \"$(git prTrainArg \"$1\")\"; }; f $1"
 	prtd = "!f () { ~/canvanauts/realyze-git-pr-train/dist/index.js \"$(git prTrainArg \"$1\")\"; }; f $1"
 
