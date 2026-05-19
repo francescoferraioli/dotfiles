@@ -107,10 +107,10 @@
 	fpa = !git f && git pa
 	pm = remote prune origin
 
-	# PR Train (arg logic: git/pr-train-arg.sh)
+	# PR Train (git/pr-train-arg.sh, git/pr-train-run.sh)
 	prTrainArg = !sh ~/dotfiles/git/pr-train-arg.sh
-	prt = "!f () { git pr-train \"$(git prTrainArg \"$1\")\"; }; f $1"
-	prtd = "!f () { ~/canvanauts/realyze-git-pr-train/dist/index.js \"$(git prTrainArg \"$1\")\"; }; f $1"
+	prt = !sh ~/dotfiles/git/pr-train-run.sh prt
+	prtd = !sh ~/dotfiles/git/pr-train-run.sh prtd
 
 	# Tracking
 	trackingAdd = "!f() { git remote set-branches --add origin \"$1\"; }; f"
