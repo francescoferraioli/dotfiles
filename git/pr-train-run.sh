@@ -1,7 +1,8 @@
 #!/bin/sh
-# Usage: pr-train-run.sh <prt|prtd> [bn] <specifier>
+# Usage: pr-train-run.sh <prt|prtd> [bn] <specifier> [extra args...]
 #   git prt bn 2     → git pr-train --branch-name 1
 #   git prt next     → git pr-train next
+# Extra arguments after the specifier are passed through unchanged.
 # Rebase onto train branches: git prtr [-i] (see pr-train-rebase.sh)
 
 DOTFILES="${DOTFILES:-$HOME/dotfiles}"
@@ -16,10 +17,14 @@ shift
 case "$(printf '%s' "${1:-}" | tr '[:upper:]' '[:lower:]')" in
     bn)
         shift
-        set -- --branch-name "$(normalize "$1")"
+        normalized="$(normalize "$1")"
+        shift
+        set -- --branch-name "$normalized" "$@"
         ;;
     *)
-        set -- "$(normalize "$1")"
+        normalized="$(normalize "$1")"
+        shift
+        set -- "$normalized" "$@"
         ;;
 esac
 
