@@ -124,6 +124,7 @@
 	# oldest commit on current branch that is not on mainline
 	branchFirst = "!git rev-list --reverse origin/$(git mb)..HEAD | head -1"
 	rb = "!git rebase -i \"$(git rev-parse $(git branchFirst)^)\""
+	rbm = !git rebase -i origin/$(git mb)
 	rc = rebase --continue
 	ra = rebase --abort
 	rs = rebase --skip
