@@ -47,6 +47,7 @@
 	# main/master-branch
 	mb = "!f () { git branch --remote | awk '{print $1}' | rg '^origin/(develop|master|main)$' | head -n 1 | sed 's/origin\\///'; }; f"
 	co = checkout
+	coi = !sh ~/dotfiles/git/switch-branch.sh
 	cob = checkout -b
 	coc = checkout -
 	com = !git checkout $(git mb)
