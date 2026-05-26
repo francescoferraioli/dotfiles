@@ -5,6 +5,7 @@ sudo apt update
 sudo apt install fonts-powerline
 sudo apt install ripgrep
 sudo apt install fzf
+curl https://cursor.com/install -fsS | bash
 
 curl -sS https://starship.rs/install.sh | sh -s -- -y
 
