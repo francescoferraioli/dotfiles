@@ -25,8 +25,8 @@ if [[ "$OS" != "Windows_NT" ]] && [[ ! "$(uname -s 2>/dev/null)" =~ ^(MINGW|MSYS
 	alias gh='ff devbox gh'
 	# add brew to path
 	eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
-	# alias git to git-spice
-	alias git="git-spice"
+	# alias gs to git-spice
+	alias gs="git-spice"
 fi
 
 # Add completion for the g alias (source git completion first; location varies by OS)
