@@ -188,6 +188,8 @@
   path = ~/.gitconfig-canva
 [includeIf "gitdir:~/source/repos/"]
   path = ~/.gitconfig-gfm
+[spice "repoSync"]
+	restack = upstack
 [maintenance]
 	repo = /Users/frankie/work/canva-dev
 	repo = /Users/frankie/work/canva
