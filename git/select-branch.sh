@@ -1,17 +1,21 @@
 #!/bin/sh
-# Pick a local branch with fzf and check it out.
-# Usage: switch-branch.sh [branch-name]
-#   git coi              → interactive picker (newest branches first)
-#   git coi my-branch    → git checkout my-branch
+# Pick a local branch with fzf and print its name to stdout (for composition).
+# Usage: select-branch.sh [branch-name]
+#   select-branch.sh              → interactive picker (newest branches first)
+#   select-branch.sh my-branch    → echo my-branch
+#   git checkout $(select-branch.sh)
+#   git rebase $(select-branch.sh)
+#   git coi                       → checkout via picker (git alias wraps this script)
 
 set -eu
 
 if [ $# -gt 0 ]; then
-	exec git checkout "$@"
+	echo "$1"
+	exit 0
 fi
 
 if ! git rev-parse --git-dir >/dev/null 2>&1; then
-	echo "coi: not a git repository" >&2
+	echo "select-branch: not a git repository" >&2
 	exit 1
 fi
 
@@ -26,7 +30,7 @@ if ! command -v fzf >/dev/null 2>&1; then
 fi
 
 if ! command -v fzf >/dev/null 2>&1; then
-	echo "coi: fzf not found (brew install fzf)" >&2
+	echo "select-branch: fzf not found (brew install fzf)" >&2
 	exit 1
 fi
 
@@ -49,4 +53,4 @@ if [ -z "${selected:-}" ]; then
 	exit 0
 fi
 
-exec git checkout "$selected"
+echo "$selected"
