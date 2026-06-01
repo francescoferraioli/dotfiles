@@ -10,3 +10,9 @@ curl https://cursor.com/install -fsS | bash
 curl -sS https://starship.rs/install.sh | sh -s -- -y
 
 npm i -g https://github.com/canvanauts/realyze-git-pr-train.git
+
+# Install Homebrew
+NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# git spice
+brew install git-spice
