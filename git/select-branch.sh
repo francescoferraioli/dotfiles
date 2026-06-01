@@ -50,7 +50,7 @@ selected="$(
 )"
 
 if [ -z "${selected:-}" ]; then
-	exit 0
+	exit 1
 fi
 
 echo "$selected"

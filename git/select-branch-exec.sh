@@ -29,7 +29,7 @@ cmd=""
 if [ "$1" = "--" ]; then
 	shift
 	if [ $# -eq 0 ]; then
-		exit 0
+		exit 1
 	fi
 	branch="$(git sb)"
 	cmd=$*
@@ -46,7 +46,7 @@ else
 fi
 
 if [ -z "$branch" ]; then
-	exit 0
+	exit 1
 fi
 
 export b="$branch"
