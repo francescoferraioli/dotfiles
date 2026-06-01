@@ -49,7 +49,7 @@
 	co = checkout
 	sb = !sh ~/dotfiles/git/select-branch.sh
 	sbe = !sh ~/dotfiles/git/select-branch-exec.sh
-	coi = !f() { b=$(git sb "$@"); [ -n "$b" ] && git checkout "$b"; }; f
+	coi = !git sbe 'git checkout %'
 	cob = checkout -b
 	coc = checkout -
 	com = !git checkout $(git mb)
