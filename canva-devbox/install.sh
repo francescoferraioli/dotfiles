@@ -13,6 +13,7 @@ npm i -g https://github.com/canvanauts/realyze-git-pr-train.git
 
 # Install Homebrew
 NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
 
 # git spice
 brew install git-spice
