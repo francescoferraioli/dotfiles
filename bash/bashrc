@@ -27,6 +27,7 @@ if [[ "$OS" != "Windows_NT" ]] && [[ ! "$(uname -s 2>/dev/null)" =~ ^(MINGW|MSYS
 	eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
 	# alias gs to git-spice
 	alias gs="git-spice"
+	eval "$(gs shell completion bash)"
 fi
 
 # Add completion for the g alias (source git completion first; location varies by OS)
