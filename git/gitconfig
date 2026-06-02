@@ -193,6 +193,8 @@
 [spice "submit"]
 	navigationComment = false
 	draft = true
+[spice "log"]
+	crStatus = true
 [maintenance]
 	repo = /Users/frankie/work/canva-dev
 	repo = /Users/frankie/work/canva
