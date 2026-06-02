@@ -193,6 +193,7 @@
 [spice "submit"]
 	navigationComment = false
 	draft = true
+	publish = false
 [spice "log"]
 	crStatus = true
 [maintenance]
