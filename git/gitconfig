@@ -190,6 +190,9 @@
   path = ~/.gitconfig-gfm
 [spice "repoSync"]
 	restack = upstack
+[spice "submit"]
+	navigationComment = false
+	draft = true
 [maintenance]
 	repo = /Users/frankie/work/canva-dev
 	repo = /Users/frankie/work/canva
