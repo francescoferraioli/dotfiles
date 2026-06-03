@@ -111,7 +111,7 @@
 	pm = remote prune origin
 
 	# Git Spice
-	stackResync = "!f () { gs r s && gs r r; }; f"
+	stackResync = "!f () { git-spice r s && git-spice r r; }; f"
 
 	# PR Train (git/pr-train-arg.sh, git/pr-train-run.sh, git/pr-train-rebase.sh)
 	prTrainArg = !sh ~/dotfiles/git/pr-train-arg.sh
