@@ -111,6 +111,7 @@
 	pm = remote prune origin
 
 	# Git Spice
+	s-s = !git-spice log long
 	s-p = !git-spice repo sync
 	s-ps = !git-spice stack submit
 	s-fmar = "!f () { git-spice r s && git-spice r r; }; f"
