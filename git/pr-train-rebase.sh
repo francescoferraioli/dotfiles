@@ -1,5 +1,5 @@
 #!/bin/sh
-# Rebase current branch onto a train branch (resolved via prt bn → prTrainArg → pr-train).
+# Rebase current branch onto a train branch (resolved via prt bn → pr-train-arg → pr-train).
 # Usage: pr-train-rebase.sh [-i] [prtd] [specifier]
 #   git prtr           → git rebase onto previous
 #   git prtr -i next   → git rebase -i onto next
