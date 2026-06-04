@@ -5,12 +5,6 @@
 # source ~/.nix-profile/etc/profile.d/nix.sh
 
 ########################
-# GIT SPICE
-########################
-alias gs="git-spice"
-eval "$(gs shell completion zsh)"
-
-########################
 # STARSHIP
 ########################
 
@@ -179,6 +173,12 @@ eval "$(fnm env --use-on-cd)"
 
 # export DIRENV_LOG_FORMAT=
 # eval "$(direnv hook zsh)"
+
+########################
+# GIT SPICE
+########################
+alias gs="git-spice"
+eval "$(gs shell completion zsh)"
 
 ########################
 # Z
