@@ -118,6 +118,7 @@
 	s-c = !git-spice commit create
 	s-amend = !git-spice commit amend --no-edit
 	s-camend = !git-spice commit amend
+	s-cob  = !git-spice branch create --no-commit
 
 	# PR Train (git/pr-train-arg.sh, git/pr-train-run.sh, git/pr-train-rebase.sh)
 	pr-train-arg = !sh ~/dotfiles/git/pr-train-arg.sh
