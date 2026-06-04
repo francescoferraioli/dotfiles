@@ -180,6 +180,14 @@ eval "$(fnm env --use-on-cd)"
 alias gs="git-spice"
 eval "$(gs shell completion zsh)"
 
+s() {
+	if (( $# < 1 )); then
+		echo "usage: s <suffix> [args...]  (runs git s-<suffix>)" >&2
+		return 1
+	fi
+	git "s-$1" "${@:2}"
+}
+
 ########################
 # Z
 ########################

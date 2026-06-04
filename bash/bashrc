@@ -19,6 +19,14 @@ alias dc="docker-compose"
 alias lzd="lazydocker"
 alias p="pnpm"
 
+s() {
+	if (( $# < 1 )); then
+		echo "usage: s <suffix> [args...]  (runs git s-<suffix>)" >&2
+		return 1
+	fi
+	git "s-$1" "${@:2}"
+}
+
 # Devbox (coder user)
 if [[ "$OS" != "Windows_NT" ]] && [[ ! "$(uname -s 2>/dev/null)" =~ ^(MINGW|MSYS|CYGWIN) ]] && [[ "${USER:-}" == "coder" ]]; then
 	# route gh through ff so GitHub CLI is authorized in the devbox.
