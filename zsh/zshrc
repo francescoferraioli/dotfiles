@@ -5,6 +5,12 @@
 # source ~/.nix-profile/etc/profile.d/nix.sh
 
 ########################
+# GIT SPICE
+########################
+alias gs="git-spice"
+eval "$(gs shell completion zsh)"
+
+########################
 # STARSHIP
 ########################
 
