@@ -116,6 +116,7 @@
 	s-s = !git-spice log long
 	s-p = "!f () { git f && git s-each 'git ro'; }; f"
 	s-ps = !git-spice stack submit
+	s-r = !git-spice stack restack
 	# Use publish to also make git-spice be aware of PRs it didn't create
 	s-psu = !git-spice stack submit --publish
 	s-psf = !git-spice stack submit --force
