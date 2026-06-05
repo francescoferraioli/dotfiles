@@ -1,5 +1,6 @@
 #!/bin/sh
-# Run a command on each branch in a git-spice stack (bottom to top).
+# Run a command on each branch in a git-spice stack (bottom to top),
+# skipping the stack base (the branch directly above trunk).
 #
 # Usage:
 #   git s-each 'git push -u origin %'
@@ -13,7 +14,7 @@
 set -eu
 
 usage() {
-	echo "s-each: run a command on each branch in the git-spice stack" >&2
+	echo "s-each: run a command on each branch in the git-spice stack (skips the base)" >&2
 	echo "  git s-each 'git push -u origin %'" >&2
 	echo "  git s-each -- git status" >&2
 	echo "  git s-each -a 'echo %'" >&2
@@ -115,15 +116,16 @@ bottoms = sorted(
 
 order = []
 
-def walk(name):
-    if name in order:
-        return
-    order.append(name)
+def walk(name, skip_self=False):
+    if not skip_self:
+        if name in order:
+            return
+        order.append(name)
     for up in branches.get(name, {}).get("ups", []):
         walk(up["name"])
 
 for bottom in bottoms:
-    walk(bottom)
+    walk(bottom, skip_self=True)
 
 for name in order:
     print(name)
@@ -131,7 +133,7 @@ for name in order:
 )" || branches=""
 
 if [ -z "$branches" ]; then
-	echo "s-each: no git-spice stack branches found (are you in a spice-tracked repo?)" >&2
+	echo "s-each: no branches to run (stack has only a base, or no spice branches found)" >&2
 	exit 1
 fi
 
