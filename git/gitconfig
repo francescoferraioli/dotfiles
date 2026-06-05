@@ -43,7 +43,7 @@
 	# branches-other than main/master
 	bo = "!f() { git branch | cut -c 3- | grep -v \"^$(git mb)$\"; }; f"
 	# current-branch
-	cb = "!f() { git branch | grep \\* | cut -d ' ' -f2; }; f"
+	cb = !git branch --show-current
 	# main/master-branch
 	mb = "!f () { git branch --remote | awk '{print $1}' | rg '^origin/(develop|master|main)$' | head -n 1 | sed 's/origin\\///'; }; f"
 	co = checkout
@@ -94,7 +94,8 @@
 	# Remote
 	f = fetch
 	p = pull
-	pb = "!git pull origin \"$(git branch --show-current)\""
+	pb = "!git pull origin \"$(git cb)\""
+	ro = "!git rebase \"origin/$(git cb)\""
 	ps = push
 	psfl = push --force-with-lease
 	psu = "!f() { git cb | xargs -n 1 git push -u origin; }; f"
@@ -113,7 +114,7 @@
 
 	# Git Spice
 	s-s = !git-spice log long
-	s-p = !git-spice repo sync
+	s-p = "!f () { git f && git s-each 'git ro'; }; f"
 	s-ps = !git-spice stack submit
 	# Use publish to also make git-spice be aware of PRs it didn't create
 	s-psu = !git-spice stack submit --publish
