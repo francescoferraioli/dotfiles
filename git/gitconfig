@@ -113,7 +113,8 @@
 	pm = remote prune origin
 
 	# Git Spice
-	s-s = !git-spice log long
+	s-l = !git-spice log long
+	s-lb = !git-spice log short
 	s-p = "!f () { git f && git s-each 'git ro' && git s-r; }; f"
 	s-ps = !git-spice stack submit
 	s-r = !git-spice stack restack
