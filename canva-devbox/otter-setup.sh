@@ -1,9 +1,13 @@
+#!/bin/bash
+
+# Setup otter claude code - we may not need this anymore
+# otter claude-code mcp add otter -- otter mcp serve
+
 # Setup otter mcp
 # Do this after cloning and creating the links as it sets things up in
 # the correct place for otter claude code to work and for mcp to be
 # installed in the correct place.
 otter config mcp enable-all
-otter claude-code mcp add otter -- otter mcp serve
 
 # Setup Jira MCP
 otter config mcp secret jira_email frankief@canva.com
