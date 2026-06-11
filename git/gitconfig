@@ -121,7 +121,7 @@
 	# Use publish to also make git-spice be aware of PRs it didn't create
 	s-psu = !git-spice stack submit --publish
 	s-psf = !git-spice stack submit --force
-	s-fmar = "!f () { git-spice r s && git-spice r r; }; f"
+	s-fmar = !sh ~/dotfiles/git/spice-fmar.sh
 	s-c = !git-spice commit create
 	s-amend = !git-spice commit amend --no-edit
 	s-camend = !git-spice commit amend
