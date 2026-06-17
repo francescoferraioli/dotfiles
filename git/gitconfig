@@ -116,6 +116,7 @@
 	s-l = !git-spice log long
 	s-lb = !git-spice log short
 	s-p = "!f () { git f && git s-each 'git ro' && git s-r; }; f"
+	s-rho = "!f () { git f && git s-each 'git rho'; }; f"
 	s-ps = !git-spice stack submit
 	s-r = !git-spice stack restack
 	# Use publish to also make git-spice be aware of PRs it didn't create
