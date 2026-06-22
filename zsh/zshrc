@@ -182,10 +182,15 @@ eval "$(gs shell completion zsh)"
 
 s() {
 	if (( $# < 1 )); then
-		echo "usage: s <suffix> [args...]  (runs git s-<suffix>)" >&2
+		echo "usage: s <suffix> [args...]  (runs git s-<suffix>, or gs <suffix>)" >&2
 		return 1
 	fi
-	git "s-$1" "${@:2}"
+	local cmd="s-$1"
+	if git --list-cmds=alias,others 2>/dev/null | grep -Fqx "$cmd"; then
+		git "$cmd" "${@:2}"
+	else
+		gs "$@"
+	fi
 }
 
 ########################
