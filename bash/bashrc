@@ -28,7 +28,7 @@ s() {
 	if git --list-cmds=alias,others 2>/dev/null | grep -Fqx "$cmd"; then
 		git "$cmd" "${@:2}"
 	else
-		gs "$@"
+		git-spice "$@"
 	fi
 }
 
