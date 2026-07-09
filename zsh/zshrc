@@ -137,6 +137,7 @@ alias p="pnpm"
 alias d="docker"
 alias dc="docker-compose"
 alias lzd="lazydocker"
+alias taz-fast='taz check --fix --skip-tasks jest --skip-tasks sonarlint --tui=false'
 
 # Enable completion for aliases
 compdef g=git
