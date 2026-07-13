@@ -47,6 +47,12 @@ echo ""
 echo "Setting up starship links"
 create_link ~/.config/starship.toml ~/dotfiles/starship/starship.toml
 
+echo ""
+echo "Installing Canva pre-commit (taz fmt)"
+# Resolve installer relative to this script so it works regardless of cwd.
+DOTFILES_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+"$DOTFILES_ROOT/git/install-canva-pre-commit.sh"
+
 # echo ""
 # echo "Setting up hammerspoon links"
 # mkdir ~/.hammerspoon
