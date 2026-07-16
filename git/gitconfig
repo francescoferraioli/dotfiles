@@ -45,7 +45,7 @@
 	# current-branch
 	cb = !git branch --show-current
 	# main/master-branch
-	mb = "!f () { git branch --remote | awk '{print $1}' | rg '^origin/(develop|master|main)$' | head -n 1 | sed 's/origin\\///'; }; f"
+	mb = !sh ~/dotfiles/git/mb.sh
 	co = checkout
 	sb = !sh ~/dotfiles/git/select-branch.sh
 	sbe = !sh ~/dotfiles/git/select-branch-exec.sh
