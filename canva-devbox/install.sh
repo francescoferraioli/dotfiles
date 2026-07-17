@@ -17,3 +17,5 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
 
 # git spice
 brew install git-spice
+
+brew install fd
