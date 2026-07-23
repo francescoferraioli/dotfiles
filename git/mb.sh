@@ -6,7 +6,7 @@
 
 set -eu
 
-branch="$(git symbolic-ref -q --short refs/remotes/origin/HEAD 2>/dev/null | sed 's|^origin/||' || true)"
+branch="$(git symbolic-ref -q refs/remotes/origin/HEAD 2>/dev/null | sed 's|^refs/remotes/origin/||' || true)"
 
 if [ -z "$branch" ]; then
 	for cand in develop main master; do
