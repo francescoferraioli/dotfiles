@@ -108,6 +108,10 @@ cweb () {
 	cd ~/work/canva/web
 }
 
+canva () {
+	cd ~/work/canva
+}
+
 wt() {
     local dir
     dir=$(git worktree list --porcelain |

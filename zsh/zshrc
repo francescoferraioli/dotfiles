@@ -215,6 +215,10 @@ cweb () {
 	cd ~/work/canva/web
 }
 
+canva () {
+	cd ~/work/canva
+}
+
 repos () {
 	cd ~/work
 	zz $1
