@@ -108,6 +108,14 @@ cweb () {
 	cd ~/work/canva/web
 }
 
+wt() {
+    local dir
+    dir=$(git worktree list --porcelain |
+        awk '/^worktree / {print $2}' |
+        fzf) || return
+    cd "$dir"
+}
+
 BASH_PRIVATE_FILE="~/.bashrc_private.sh"
 if test -f "$BASH_PRIVATE_FILE"; then
   . $BASH_PRIVATE_FILE 

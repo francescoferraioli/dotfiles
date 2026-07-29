@@ -242,3 +242,11 @@ zz () {
 		cd $Z_BEST_MATCH
 	fi
 }
+
+wt() {
+    local dir
+    dir=$(git worktree list --porcelain |
+        awk '/^worktree / {print $2}' |
+        fzf) || return
+    cd "$dir"
+}
