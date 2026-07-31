@@ -17,6 +17,17 @@ echo ""
 echo "Setting up gitconfig links"
 create_link ~/.gitconfig ~/dotfiles/git/gitconfig
 create_link ~/.gitconfig-canva ~/dotfiles/git/gitconfig-canva
+create_link ~/.gitconfig-devbox ~/dotfiles/git/gitconfig-devbox
+
+if [[ "${USER:-}" == "coder" ]]; then
+	echo ""
+	echo "Removing stale devbox GitHub credential helper (/usr/bin/gh)"
+	# gh auth setup-git may register the unauthenticated system gh binary.
+	# gitconfig-devbox supplies /usr/local/bin/gh via includeIf instead.
+	while git config --global --get-all credential.https://github.com.helper 2>/dev/null | grep -q '/usr/bin/gh'; do
+		git config --global --unset credential.https://github.com.helper 2>/dev/null || break
+	done
+fi
 
 echo ""
 echo "Setting up gitignore links"

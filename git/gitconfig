@@ -226,3 +226,5 @@
 	repo = /Users/frankie/work/docs
 [status]
 	aheadBehind = true
+[includeIf "gitdir:/home/coder/"]
+	path = ~/.gitconfig-devbox

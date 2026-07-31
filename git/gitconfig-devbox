@@ -1,0 +1,7 @@
+# Devbox-only git settings (included when repo gitdir is under /home/coder/).
+#
+# gh auth setup-git registers /usr/bin/gh, which is not authenticated on Coder
+# devboxes. /usr/local/bin/gh is the wrapper that uses Coder external-auth.
+[credential "https://github.com"]
+	helper =
+	helper = !/usr/local/bin/gh auth git-credential
