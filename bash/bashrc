@@ -14,9 +14,7 @@ alias g="git"
 alias c="cursor"
 alias v="vim"
 alias y="yarn"
-alias d="docker"
-alias dc="docker-compose"
-alias lzd="lazydocker"
+alias d="ff devbox"
 alias p="pnpm"
 
 s() {
