@@ -135,6 +135,7 @@ alias y="yarn"
 alias n="npm"
 alias p="pnpm"
 alias d="ff devbox"
+alias wt="ff wt"
 
 # Enable completion for aliases
 compdef g=git
@@ -245,10 +246,8 @@ zz () {
 	fi
 }
 
-wt() {
+wtcd() {
     local dir
-    dir=$(git worktree list --porcelain |
-        awk '/^worktree / {print $2}' |
-        fzf) || return
+    dir=$(ff wt fzf) || return
     cd "$dir"
 }

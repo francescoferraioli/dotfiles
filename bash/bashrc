@@ -29,6 +29,7 @@ alias c="cursor"
 alias v="vim"
 alias y="yarn"
 alias d="ff devbox"
+alias wt="ff wt"
 alias p="pnpm"
 
 s() {
@@ -110,11 +111,9 @@ canva () {
 	cd ~/work/canva
 }
 
-wt() {
+wtcd() {
     local dir
-    dir=$(git worktree list --porcelain |
-        awk '/^worktree / {print $2}' |
-        fzf) || return
+    dir=$(ff wt fzf) || return
     cd "$dir"
 }
 
