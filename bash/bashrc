@@ -4,6 +4,20 @@ if [ "$OS" = "Windows_NT" ] || [[ "$(uname -s)" =~ ^(MINGW|MSYS|CYGWIN) ]]; then
 	PROMPT_COMMAND="${PROMPT_COMMAND:+${PROMPT_COMMAND}; }history -a"
 	# Persist current directory through splits
 	PROMPT_COMMAND=${PROMPT_COMMAND:+"$PROMPT_COMMAND; "}'printf "\e]9;9;%s\e\\" "`cygpath -w "$PWD" -C ANSI`"'
+else
+	export PATH=/usr/local/bin:$PATH
+	export PATH=$HOME/scripts:$PATH
+
+	# Devbox (coder user)
+	if [[ "${USER:-}" == "coder" ]]; then
+		# route gh through ff so GitHub CLI is authorized in the devbox.
+		alias gh='ff devbox gh'
+		# add brew to path
+		eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
+		# alias gs to git-spice
+		alias gs="git-spice"
+		eval "$(gs shell completion bash)"
+	fi
 fi
 
 # Run starship
@@ -30,17 +44,6 @@ s() {
 	fi
 }
 
-# Devbox (coder user)
-if [[ "$OS" != "Windows_NT" ]] && [[ ! "$(uname -s 2>/dev/null)" =~ ^(MINGW|MSYS|CYGWIN) ]] && [[ "${USER:-}" == "coder" ]]; then
-	# route gh through ff so GitHub CLI is authorized in the devbox.
-	alias gh='ff devbox gh'
-	# add brew to path
-	eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
-	# alias gs to git-spice
-	alias gs="git-spice"
-	eval "$(gs shell completion bash)"
-fi
-
 # Add completion for the g alias (source git completion first; location varies by OS)
 if [[ -r /usr/share/bash-completion/completions/git ]]; then
 	# Linux (Debian/Ubuntu, etc.)
@@ -58,9 +61,6 @@ fi
 set -o vi
 
 export CLAUDE_CODE_ENABLE_PROMPT_SUGGESTION=1
-
-# Adding to path
-export PATH=$PATH:~/scripts
 
 z () {
 	if [ -z $1 ]; then
