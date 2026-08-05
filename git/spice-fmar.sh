@@ -1,5 +1,5 @@
 #!/bin/sh
-# s-fmar: sync with remote, remove merged spice branches repo sync missed, restack.
+# s-fmar: sync with remote, remove merged spice branches repo sync missed, restack current stack.
 #
 # Handles squash/rebase merges where gs repo sync cannot correlate local history
 # with the merged change request. Uses git-spice CR status, not commit ancestry.
@@ -193,12 +193,12 @@ MERGED
 if [ "$#" -eq 0 ]; then
 	log 'no merged branches to remove'
 	if [ "$dry_run" = true ]; then
-		log 'dry run: would run git-spice repo restack'
+		log 'dry run: would run git-spice stack restack'
 		exit 0
 	fi
-	log 'restacking all tracked branches...'
-	if ! git-spice repo restack; then
-		fail 'repo restack failed'
+	log 'restacking current stack...'
+	if ! git-spice stack restack; then
+		fail 'stack restack failed'
 	fi
 	log 'done'
 	exit 0
@@ -216,7 +216,7 @@ if [ "$dry_run" = true ]; then
 		printf ' %s' "$branch"
 	done
 	printf '\n'
-	log 'dry run: would run git-spice repo restack'
+	log 'dry run: would run git-spice stack restack'
 	exit 0
 fi
 
@@ -236,9 +236,9 @@ if ! git-spice branch delete --force --restack=upstack "$@"; then
 	fail 'branch delete failed'
 fi
 
-log 'restacking all tracked branches...'
-if ! git-spice repo restack; then
-	fail 'repo restack failed'
+log 'restacking current stack...'
+if ! git-spice stack restack; then
+	fail 'stack restack failed'
 fi
 
 log 'done'
