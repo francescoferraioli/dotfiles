@@ -71,7 +71,7 @@
   "vim.handleKeys": {
     "<C-p>": false
   },
-  "window.zoomLevel": 1,
+  "window.zoomLevel": 0,
   "editor.accessibilitySupport": "off",
   "git.rebaseWhenSync": true
 }
