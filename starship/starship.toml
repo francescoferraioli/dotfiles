@@ -4,6 +4,7 @@ $directory\
 $git_branch\
 $git_state\
 $git_status\
+$time\
 $line_break\
 $character\
 """
@@ -22,6 +23,12 @@ style = "bold yellow"
 [directory]
 truncate_to_repo = false
 truncation_length = 0
+
+[time]
+disabled = false
+format = '[$time]($style) '
+time_format = '%I:%M:%S %p'
+style = "dimmed white"
 
 [git_status]
 format = '([\[$all_status$ahead_behind | \]]($style) )'
