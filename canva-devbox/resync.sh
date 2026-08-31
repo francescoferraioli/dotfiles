@@ -2,6 +2,8 @@
 
 set -e
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 cd "$HOME"
 
 # Optional: path to create-links.sh relative to repo root (default: create-links.sh)
@@ -25,4 +27,4 @@ done
 
 echo ">>> Resync done."
 
-./otter-setup.sh
+"$SCRIPT_DIR/otter-setup.sh"
