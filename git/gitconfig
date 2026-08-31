@@ -56,6 +56,7 @@
 	cob = checkout -b
 	coc = checkout -
 	com = !git checkout $(git mb)
+	cop = "!f() { git co \"$1\" && git pb; }; f"
 	rename = "!f() { git push origin --delete $2 ; git branch -m $1 && git psu; }; f $1 $(git cb)"
 	# show-merged
 	sm = "!f() { git branch --merged $(git mb) | grep -v '^[ *]*$(git mb)$'; }; f"
