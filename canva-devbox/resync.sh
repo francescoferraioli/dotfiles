@@ -24,3 +24,5 @@ for repo in dotfiles scripts ff frankie-claude; do
 done
 
 echo ">>> Resync done."
+
+./otter-setup.sh
