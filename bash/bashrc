@@ -121,3 +121,4 @@ BASH_PRIVATE_FILE="~/.bashrc_private.sh"
 if test -f "$BASH_PRIVATE_FILE"; then
   . $BASH_PRIVATE_FILE 
 fi
+export PATH="$HOME/.local/share/taz/tools/bin:$PATH"
