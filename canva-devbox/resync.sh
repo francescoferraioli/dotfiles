@@ -6,7 +6,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 cd "$HOME"
 
-for repo in dotfiles scripts ff frankie-claude; do
+for repo in dotfiles scripts ff frankie-claude frankie-assistant-canva; do
   if [[ -d "$repo" ]]; then
     echo ">>> Pulling $repo..."
     (cd "$repo" && git fetch && git reset --hard '@{u}')
