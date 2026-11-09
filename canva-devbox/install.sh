@@ -57,3 +57,5 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
 brew_safe install git-spice
 
 brew_safe install fzf fd
+
+otter workflow skill enable canva-pr-proof-of-work
