@@ -33,7 +33,6 @@ npm install -g diff-so-fancy
 sudo apt update
 sudo apt install -y fonts-powerline
 sudo apt install -y ripgrep
-curl https://cursor.com/install -fsS | bash
 
 curl -sS https://starship.rs/install.sh | sh -s -- -y
 
