@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -e
 
 # Devbox puts Canva's cg git wrapper first on PATH (/etc/bash.bashrc). Homebrew's
 # auto `brew update` then hangs in a recursive `git config --includes` subprocess
@@ -27,34 +28,75 @@ brew_safe() {
   brew "$@"
 }
 
-# Install diff-so-fancy
-npm install -g diff-so-fancy
+apt_group() {
+  sudo apt update
+  sudo apt install -y fonts-powerline ripgrep
+}
 
-sudo apt update
-sudo apt install -y fonts-powerline
-sudo apt install -y ripgrep
+npm_group() {
+  npm install -g diff-so-fancy
+  npm i -g https://github.com/canvanauts/realyze-git-pr-train.git
+}
 
-curl -sS https://starship.rs/install.sh | sh -s -- -y
+starship_group() {
+  curl -sS https://starship.rs/install.sh | sh -s -- -y
+}
 
-npm i -g https://github.com/canvanauts/realyze-git-pr-train.git
+brew_group() {
+  if [[ -x /home/linuxbrew/.linuxbrew/bin/brew ]]; then
+    echo "Homebrew already installed, skipping installer"
+  else
+    GIT_CONFIG_GLOBAL="$BREW_GIT_CONFIG" \
+    GIT_CONFIG_SYSTEM=/dev/null \
+    PATH="/usr/bin:/bin:$PATH" \
+    HOMEBREW_GIT_PATH=/usr/bin/git \
+    HOMEBREW_NO_AUTO_UPDATE=1 \
+    NONINTERACTIVE=1 \
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  fi
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
+  brew_safe install git-spice fzf fd
+}
 
-# Install Homebrew
-if [[ -x /home/linuxbrew/.linuxbrew/bin/brew ]]; then
-  echo "Homebrew already installed, skipping installer"
-else
-  GIT_CONFIG_GLOBAL="$BREW_GIT_CONFIG" \
-  GIT_CONFIG_SYSTEM=/dev/null \
-  PATH="/usr/bin:/bin:$PATH" \
-  HOMEBREW_GIT_PATH=/usr/bin/git \
-  HOMEBREW_NO_AUTO_UPDATE=1 \
-  NONINTERACTIVE=1 \
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+otter_skill_group() {
+  otter workflow skill enable canva-pr-proof-of-work
+}
+
+# Apt, npm, Starship, and Homebrew do not share a package database.
+# Homebrew packages stay in this group so they install after the prefix exists.
+# Child shells drop the EXIT trap so they do not delete the shared brew git config.
+start_group() {
+  local name="$1"
+  shift
+  (
+    trap - EXIT
+    set -e
+    set -o pipefail
+    echo ">>> $name"
+    "$@"
+  ) &
+  pids+=("$!")
+}
+
+wait_all() {
+  local failed=0
+  local pid
+  for pid in "$@"; do
+    if ! wait "$pid"; then
+      failed=1
+    fi
+  done
+  return "$failed"
+}
+
+pids=()
+start_group "apt" apt_group
+start_group "npm" npm_group
+start_group "starship" starship_group
+start_group "homebrew" brew_group
+start_group "otter skill" otter_skill_group
+
+if ! wait_all "${pids[@]}"; then
+  echo ">>> Install failed." >&2
+  exit 1
 fi
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
-
-# git spice
-brew_safe install git-spice
-
-brew_safe install fzf fd
-
-otter workflow skill enable canva-pr-proof-of-work
