@@ -208,10 +208,6 @@
 
 [includeIf "gitdir:~/work/"]
   path = ~/.gitconfig-canva
-[includeIf "hasconfig:remote.*.url:https://github.com/Canva/**"]
-  path = ~/.gitconfig-canva
-[includeIf "hasconfig:remote.*.url:git@github.com:Canva/**"]
-  path = ~/.gitconfig-canva
 [includeIf "gitdir:~/source/repos/"]
   path = ~/.gitconfig-gfm
 [spice "repoSync"]
